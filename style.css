@@ -1,0 +1,21 @@
+@font-face {  
+    font-family: 'Intro';  
+    src: url('../assets/fonts/Intro.ttf');  
+    font-weight: bold;  
+    font-style: normal;  
+}  
+body{
+    background-color: #FCFCFD;
+}
+#TrueMain{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#IndexText{
+    font-family: 'Intro'; 
+    color: #4466B9;
+    font-size: 250px;
+}
