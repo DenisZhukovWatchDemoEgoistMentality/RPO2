@@ -1,0 +1,30 @@
+﻿@page
+@model API_BucketWithBolts.Pages.API_Methods.UserMethodsModel
+@{
+    ViewData["Title"] = "User";
+}
+<div class="text-center">
+    <div>
+        <label>POST</label>
+    </div>
+    <form method="post">
+        <div>
+            <label>Имя (Обязательно):</label>
+            <input asp-for="NewUser.First_name" class="form-control" />
+        </div>
+
+        <div>
+            <label>Фамилия (Опционально):</label>
+            <input asp-for="NewUser.Second_name" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-success">Создать пользователя</button>
+    </form>
+    <div>
+        <label>GET</label>
+    </div>
+
+    <div>
+        <label>DELETE</label>
+    </div>
+</div>

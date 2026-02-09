@@ -218,3 +218,4 @@ C:\Users\student\Desktop\Trash\API-BucketWithBolts\API-BucketWithBolts\obj\Debug
 C:\Users\student\Desktop\Trash\API-BucketWithBolts\API-BucketWithBolts\obj\Debug\net9.0\API-BucketWithBolts.pdb
 C:\Users\student\Desktop\Trash\API-BucketWithBolts\API-BucketWithBolts\obj\Debug\net9.0\API-BucketWithBolts.genruntimeconfig.cache
 C:\Users\student\Desktop\Trash\API-BucketWithBolts\API-BucketWithBolts\obj\Debug\net9.0\ref\API-BucketWithBolts.dll
+C:\Users\student\Desktop\Trash\API-BucketWithBolts\API-BucketWithBolts\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
