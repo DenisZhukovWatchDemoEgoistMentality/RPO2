@@ -19,20 +19,8 @@
       "RelativeMoniker": "D:0:0:{2C739C39-41D8-42FD-83F7-9AF2C2E2C465}|API-BucketWithBolts\\API-BucketWithBolts.csproj|solutionrelative:api-bucketwithbolts\\routers\\api_methods_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C739C39-41D8-42FD-83F7-9AF2C2E2C465}|API-BucketWithBolts\\API-BucketWithBolts.csproj|c:\\users\\student\\desktop\\trash\\api-bucketwithbolts\\api-bucketwithbolts\\context\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C739C39-41D8-42FD-83F7-9AF2C2E2C465}|API-BucketWithBolts\\API-BucketWithBolts.csproj|solutionrelative:api-bucketwithbolts\\context\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C739C39-41D8-42FD-83F7-9AF2C2E2C465}|API-BucketWithBolts\\API-BucketWithBolts.csproj|c:\\users\\student\\desktop\\trash\\api-bucketwithbolts\\api-bucketwithbolts\\pages\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2C739C39-41D8-42FD-83F7-9AF2C2E2C465}|API-BucketWithBolts\\API-BucketWithBolts.csproj|solutionrelative:api-bucketwithbolts\\pages\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2C739C39-41D8-42FD-83F7-9AF2C2E2C465}|API-BucketWithBolts\\API-BucketWithBolts.csproj|c:\\users\\student\\desktop\\trash\\api-bucketwithbolts\\api-bucketwithbolts\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2C739C39-41D8-42FD-83F7-9AF2C2E2C465}|API-BucketWithBolts\\API-BucketWithBolts.csproj|solutionrelative:api-bucketwithbolts\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C739C39-41D8-42FD-83F7-9AF2C2E2C465}|API-BucketWithBolts\\API-BucketWithBolts.csproj|c:\\users\\student\\desktop\\trash\\api-bucketwithbolts\\api-bucketwithbolts\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2C739C39-41D8-42FD-83F7-9AF2C2E2C465}|API-BucketWithBolts\\API-BucketWithBolts.csproj|solutionrelative:api-bucketwithbolts\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C739C39-41D8-42FD-83F7-9AF2C2E2C465}|API-BucketWithBolts\\API-BucketWithBolts.csproj|c:\\users\\student\\desktop\\trash\\api-bucketwithbolts\\api-bucketwithbolts\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,11 +34,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\student\\Desktop\\Trash\\API-BucketWithBolts\\API-BucketWithBolts\\Program.cs",
               "RelativeDocumentMoniker": "API-BucketWithBolts\\Program.cs",
@@ -59,12 +47,11 @@
               "ViewState": "AgIAAAAAAAAAAAAAAIBJwA0AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-09T03:46:19.893Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\student\\Desktop\\Trash\\API-BucketWithBolts\\API-BucketWithBolts\\Pages\\Index.cshtml",
               "RelativeDocumentMoniker": "API-BucketWithBolts\\Pages\\Index.cshtml",
@@ -73,8 +60,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-02-09T04:28:41.161Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -84,7 +70,7 @@
               "RelativeDocumentMoniker": "API-BucketWithBolts\\Pages\\Index.cshtml.cs",
               "ToolTip": "C:\\Users\\student\\Desktop\\Trash\\API-BucketWithBolts\\API-BucketWithBolts\\Pages\\Index.cshtml.cs",
               "RelativeToolTip": "API-BucketWithBolts\\Pages\\Index.cshtml.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAADwvxwAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-09T04:22:01.215Z",
               "IsPinned": true,
@@ -112,39 +98,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\student\\Desktop\\Trash\\API-BucketWithBolts\\API-BucketWithBolts\\Pages\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "API-BucketWithBolts\\Pages\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\student\\Desktop\\Trash\\API-BucketWithBolts\\API-BucketWithBolts\\Pages\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "API-BucketWithBolts\\Pages\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAIBJwBkAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-09T05:08:09.041Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Privacy.cshtml",
-              "DocumentMoniker": "C:\\Users\\student\\Desktop\\Trash\\API-BucketWithBolts\\API-BucketWithBolts\\Pages\\Privacy.cshtml",
-              "RelativeDocumentMoniker": "API-BucketWithBolts\\Pages\\Privacy.cshtml",
-              "ToolTip": "C:\\Users\\student\\Desktop\\Trash\\API-BucketWithBolts\\API-BucketWithBolts\\Pages\\Privacy.cshtml",
-              "RelativeToolTip": "API-BucketWithBolts\\Pages\\Privacy.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-09T05:04:05.387Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "UserMethods.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\student\\Desktop\\Trash\\API-BucketWithBolts\\API-BucketWithBolts\\Pages\\API_Methods\\UserMethods.cshtml.cs",
               "RelativeDocumentMoniker": "API-BucketWithBolts\\Pages\\API_Methods\\UserMethods.cshtml.cs",
               "ToolTip": "C:\\Users\\student\\Desktop\\Trash\\API-BucketWithBolts\\API-BucketWithBolts\\Pages\\API_Methods\\UserMethods.cshtml.cs",
               "RelativeToolTip": "API-BucketWithBolts\\Pages\\API_Methods\\UserMethods.cshtml.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwB0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-09T04:51:03.278Z",
               "EditorCaption": ""
@@ -157,7 +117,7 @@
               "RelativeDocumentMoniker": "API-BucketWithBolts\\Pages\\API_Methods\\UserMethods.cshtml",
               "ToolTip": "C:\\Users\\student\\Desktop\\Trash\\API-BucketWithBolts\\API-BucketWithBolts\\Pages\\API_Methods\\UserMethods.cshtml",
               "RelativeToolTip": "API-BucketWithBolts\\Pages\\API_Methods\\UserMethods.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB8AAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-02-09T04:47:34.697Z",
               "EditorCaption": ""
@@ -170,22 +130,9 @@
               "RelativeDocumentMoniker": "API-BucketWithBolts\\Routers\\API_Methods_User.cs",
               "ToolTip": "C:\\Users\\student\\Desktop\\Trash\\API-BucketWithBolts\\API-BucketWithBolts\\Routers\\API_Methods_User.cs",
               "RelativeToolTip": "API-BucketWithBolts\\Routers\\API_Methods_User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBUAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-09T04:32:32.291Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Database.cs",
-              "DocumentMoniker": "C:\\Users\\student\\Desktop\\Trash\\API-BucketWithBolts\\API-BucketWithBolts\\Context\\Database.cs",
-              "RelativeDocumentMoniker": "API-BucketWithBolts\\Context\\Database.cs",
-              "ToolTip": "C:\\Users\\student\\Desktop\\Trash\\API-BucketWithBolts\\API-BucketWithBolts\\Context\\Database.cs",
-              "RelativeToolTip": "API-BucketWithBolts\\Context\\Database.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T03:50:26.954Z",
               "EditorCaption": ""
             }
           ]

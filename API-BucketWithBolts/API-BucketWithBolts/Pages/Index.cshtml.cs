@@ -1,9 +1,5 @@
 using API_BucketWithBolts.Context;
-using API_BucketWithBolts.Routers;
-using Api_Topito.Models;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
 
 namespace API_BucketWithBolts.Pages
 {

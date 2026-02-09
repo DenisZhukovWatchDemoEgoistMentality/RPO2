@@ -1,4 +1,4 @@
-﻿namespace Api_Topito.Models
+﻿namespace API_BucketWithBolts.Models
 {
     public class OrderStatus
     {

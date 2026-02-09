@@ -1,6 +1,6 @@
 using API_BucketWithBolts.Context;
+using API_BucketWithBolts.Models;
 using API_BucketWithBolts.Routers;
-using Api_Topito.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -15,6 +15,7 @@ namespace API_BucketWithBolts.Pages.API_Methods
 
         [BindProperty]
         public User NewUser { get; set; }
+        public User? SelectedUser { get; set; }
 
 
         public UserMethodsModel(ILogger<UserMethodsModel> logger, Database context)
@@ -23,9 +24,15 @@ namespace API_BucketWithBolts.Pages.API_Methods
             _context = context;
         }
 
-        public void OnGet()
+        public IActionResult OnGet(int id)
         {
+            var user = _user_router.OnGet(_context, id);
 
+            if (user == null)
+                return Page();
+
+            SelectedUser = user;
+            return RedirectToPage();
         }
 
         public IActionResult OnPost()

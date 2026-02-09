@@ -1,5 +1,5 @@
 ﻿using API_BucketWithBolts.Context;
-using Api_Topito.Models;
+using API_BucketWithBolts.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -19,9 +19,14 @@ namespace API_BucketWithBolts.Routers
             return true;
         }
 
-        public bool OnGet(Database _context, User newUser, int id)
+        public User OnGet(Database _context, int id)
         {
-            return true;
+            User selectedUser = _context.Users.FirstOrDefault(u => u.Id == id);
+
+            if (selectedUser == null)
+                return null;
+
+            return selectedUser;
         }
     }
 }
