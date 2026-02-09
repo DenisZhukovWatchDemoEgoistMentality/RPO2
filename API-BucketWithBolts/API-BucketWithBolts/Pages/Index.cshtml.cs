@@ -23,10 +23,5 @@ namespace API_BucketWithBolts.Pages
         {
 
         }
-
-        public IActionResult OnPost()
-        {
-            return RedirectToPage("/UserMethods");
-        }
     }
 }
