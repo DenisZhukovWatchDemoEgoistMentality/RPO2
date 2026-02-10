@@ -28,12 +28,9 @@ main{
     transition: 0.2s;
 }
 
-
 .ButtonMenu:hover{
     background-color: #F2F4F7;
     color: #4466B9;
-    
-
 }
 
 #ProductsDiv{
@@ -54,9 +51,9 @@ main{
 }
 
 .ProductCardImage{
-width: 250px;
-height: 250px;
-background-color: #F2F4F7;
+    width: 250px;
+    height: 250px;
+    background-color: #F2F4F7;
 }
 
 .ProductCardName{
