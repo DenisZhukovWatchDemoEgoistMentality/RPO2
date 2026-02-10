@@ -24,6 +24,9 @@ main{
 .ButtonMenu{
     font-family: 'Intro';  
     width: 219px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 50px;
     border: 0px;
     color: #8287B0;
