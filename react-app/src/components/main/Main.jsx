@@ -19,22 +19,32 @@ export default function Main() {
         <main>
             <div id="TrueMain">
                 <button className="ButtonMenu">
-                    <img src="MainImage/Vector.png" alt="" style={{ padding: "5px" }} />
+                    <img src="MainImage/Vector.png" alt="" />
                     Главная
                 </button>
                 <button className="ButtonMenu">
-                    <img src="MainImage/Vector (1).png" alt="" style={{ padding: "5px" }} />
+                    <img src="MainImage/Vector (1).png" alt="" />
                     Сообщения
                 </button>
                 <Link to="/profile" className="ButtonMenu">
-                    <img src="/MainImage/Vector (2).png" alt="" style={{ padding: "5px" }} />
+                    <img src="/MainImage/Vector (2).png" alt="" />
                     Профиль
                 </Link>
                 <button className="ButtonMenu">
-                    <img src="MainImage/Vector (3).png" alt="" style={{ padding: "5px" }} />
+                    <img src="MainImage/Vector (3).png" alt="" />
                     Админ панель
                 </button>
             </div>
+
+        <div id="ProductsDiv">
+            <div class="ProductCard">
+                <div class="ProductCardImage"></div>
+                <div class="ProductCardName"> 
+                    <span id="Name">Название</span>
+                    <span>555 руб.</span>
+                </div>
+            </div>
+        </div>
         </main>
     );
 }
