@@ -4,6 +4,11 @@ import { React, useEffect, useInsertionEffect, useState } from 'react';
 import { Navigate, Links, Link } from 'react-router-dom'
 import Search from '../search/Search';
 
+import main_img from '../image/main.png';
+import message_img from '../image/messages.png';
+import profile_img from '../image/profile.png';
+import adminka_img from '../image/adminka.png';
+
 export default function Main() {
     // const [joke, setJoke] = useState("");
     // useEffect(() => {
@@ -20,32 +25,22 @@ export default function Main() {
         <main>
             <div id="TrueMain">
                 <Link to="/" className="ButtonMenu">
-                    <img src="MainImage/Vector.png" alt="" />
+                    <img src={main_img} alt="" />
                     Главная
                 </Link>
                 <Link to="/messages" className="ButtonMenu">
-                    <img src="MainImage/Vector (1).png" alt="" />
+                    <img src={message_img} alt="" />
                     Сообщения
                 </Link>
                 <Link to="/profile" className="ButtonMenu">
-                    <img src="/MainImage/Vector (2).png" alt="" />
+                    <img src={profile_img} alt="" />
                     Профиль
                 </Link>
                 <Link to="/adminka-huinka" className="ButtonMenu">
-                    <img src="MainImage/Vector (3).png" alt="" />
+                    <img src={adminka_img} alt="" />
                     Админ панель
                 </Link>
             </div>
-
-        <div id="ProductsDiv">
-            <div className="ProductCard">
-                <div className="ProductCardImage"></div>
-                <div className="ProductCardName">
-                    <span id="Name">Название</span>
-                    <span>555 руб.</span>
-                </div>
-            </div>
-        </div>
         </main>
     );
 }

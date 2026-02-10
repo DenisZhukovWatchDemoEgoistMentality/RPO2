@@ -2,17 +2,6 @@ import './Profile.css';
 
 export default function Header() {
   return (
-        <div className="container">
-        <aside className="sidebar">
-            <h1 className="logo">HORVARD</h1>
-            <nav className="nav-buttons">
-                <a href="#" className="nav-btn">Главная</a>
-                <a href="#" className="nav-btn">Сообщения</a>
-                <a href="#" className="nav-btn">Профиль</a>
-                <a href="#" className="nav-btn">Админ панель</a>
-            </nav>
-        </aside>
-
         <main className="main-content">
             <h2>Мой профиль</h2>
             <div className="profile-info">
@@ -30,6 +19,5 @@ export default function Header() {
                 </div>
             </div>
         </main>
-    </div>
   );
 }
