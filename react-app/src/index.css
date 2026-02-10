@@ -14,7 +14,7 @@ code {
 
 @font-face {
   font-family: 'Intro';
-  src: local('Intro'), url(./fonts/Intro.ttf) format('ttf');
+  src: url("./fonts/Intro.ttf");
   font-weight: bold;  
   font-style: normal;  
 }

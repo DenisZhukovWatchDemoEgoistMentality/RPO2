@@ -1,8 +1,8 @@
-@font-face {
-    font-family: "Intro";   /*Can be any text*/
+/* @font-face {
+    src: url("./fonts/Intro.ttf") format('ttf');
     font-weight: bold;
     font-style: normal;
-}
+} */
 
 body {
     font-family: 'Intro';
