@@ -2,6 +2,12 @@ import './Main.css';
 import axios from "axios"
 import { React, useEffect, useInsertionEffect, useState } from 'react';
 import { Navigate, Links, Link } from 'react-router-dom'
+import Search from '../search/Search';
+
+import main_img from '../image/main.png';
+import message_img from '../image/messages.png';
+import profile_img from '../image/profile.png';
+import adminka_img from '../image/adminka.png';
 
 export default function Main() {
     // const [joke, setJoke] = useState("");
@@ -18,34 +24,23 @@ export default function Main() {
     return (
         <main>
             <div id="TrueMain">
-                <button className="ButtonMenu">
-                    <img src="MainImage/Vector.png" alt="" />
+                <Link to="/" className="ButtonMenu">
+                    <img src={main_img} alt="" />
                     Главная
-                </button>
-                <button className="ButtonMenu">
-                    <img src="MainImage/Vector (1).png" alt="" />
+                </Link>
+                <Link to="/messages" className="ButtonMenu">
+                    <img src={message_img} alt="" />
                     Сообщения
-                </button>
+                </Link>
                 <Link to="/profile" className="ButtonMenu">
-                    <img src="/MainImage/Vector (2).png" alt="" />
+                    <img src={profile_img} alt="" />
                     Профиль
                 </Link>
-                <button className="ButtonMenu">
-                    <img src="MainImage/Vector (3).png" alt="" />
+                <Link to="/adminka-huinka" className="ButtonMenu">
+                    <img src={adminka_img} alt="" />
                     Админ панель
-                </button>
+                </Link>
             </div>
-
-        <div id="ProductsDiv">
-            <div class="ProductCard">
-                <div class="ProductCardImage"></div>
-                <div class="ProductCardName"> 
-                    <span id="Name">Название</span>
-                    <span>555 руб.</span>
-                </div>
-            </div>
-        </div>
         </main>
     );
 }
-
