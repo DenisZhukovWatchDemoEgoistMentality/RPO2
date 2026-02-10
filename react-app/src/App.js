@@ -22,7 +22,6 @@ export default function App() {
                       <Route path="/" element={ <Product /> } />
                       {/* <Route path="/message" element={<Message />} />  */}
                       <Route path="/profile" element={<Profile />} />
-                      {/* <Route path="/adminka-huinka" element={<Adminka />} /> */}
                       <Route path="/rules" element={<Rules />} />
                       <Route path="/privacy" element={<Privacy />} />
                   </Routes>
