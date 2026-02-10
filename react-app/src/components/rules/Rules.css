@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.rules-page {
+    color: #333;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.rules-page .legal-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.rules-page .legal-header {
+    background-color: #008cf0;
+    color: white;
+    padding: 30px 40px;
+}
+
+.rules-page .legal-header h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.rules-page .update-info {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 20px;
+}
+
+.rules-page .update-info strong {
+    color: #fffacd;
+}
+
+.rules-page .legal-content {
+    padding: 40px;
+}
+
+.rules-page .section {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.rules-page .section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.rules-page h2 {
+    color: #008cf0;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.rules-page h3 {
+    color: #333;
+    font-size: 18px;
+    margin: 20px 0 10px;
+    font-weight: 600;
+}
+
+.rules-page p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.rules-page ul,
+.rules-page ol {
+    margin-left: 25px;
+    margin-bottom: 20px;
+}
+
+.rules-page li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.rules-page .highlight {
+    background-color: #fffacd;
+    padding: 2px 4px;
+    border-radius: 2px;
+    font-weight: 600;
+}
+
+.rules-page strong {
+    color: #008cf0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .rules-page {
+        padding: 10px;
+    }
+
+    .rules-page .legal-header {
+        padding: 20px;
+    }
+
+    .rules-page .legal-header h1 {
+        font-size: 26px;
+    }
+
+    .rules-page .legal-content {
+        padding: 20px;
+    }
+
+    .rules-page h2 {
+        font-size: 22px;
+    }
+
+    .rules-page h3 {
+        font-size: 17px;
+    }
+}
