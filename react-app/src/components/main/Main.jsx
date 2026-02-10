@@ -18,22 +18,22 @@ export default function Main() {
     return (
         <main>
             <div id="TrueMain">
-                <button className="ButtonMenu">
+                <Link to="/" className="ButtonMenu">
                     <img src="MainImage/Vector.png" alt="" />
                     Главная
-                </button>
-                <button className="ButtonMenu">
+                </Link>
+                <Link to="/messages" className="ButtonMenu">
                     <img src="MainImage/Vector (1).png" alt="" />
                     Сообщения
-                </button>
+                </Link>
                 <Link to="/profile" className="ButtonMenu">
                     <img src="/MainImage/Vector (2).png" alt="" />
                     Профиль
                 </Link>
-                <button className="ButtonMenu">
+                <Link to="/adminka-huinka" className="ButtonMenu">
                     <img src="MainImage/Vector (3).png" alt="" />
                     Админ панель
-                </button>
+                </Link>
             </div>
 
         <div id="ProductsDiv">
