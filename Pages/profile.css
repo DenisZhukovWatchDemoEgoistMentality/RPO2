@@ -1,88 +1,44 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f2f5;
+@font-face {  
+    font-family: 'Intro';  
+    src: url('../assets/fonts/Intro.ttf');  
+    font-weight: bold;  
+    font-style: normal;  
+}  
+body {  
+    font-family: 'Intro';
+    overflow: hidden;
+} 
+
+main{
+    background-color: rgb(255, 255, 255);
+    display: flex;
 }
 
-.container {
-    display: flex;
-    height: 100vh;
+#TrueMain{
+    background-color: rgb(255, 255, 255);
+    border-right: 1px solid #F2F4F7;
+    width: 219px;
+    height:999px;
 }
 
-.sidebar {
-    width: 220px;
-    background-color: #ffffff;
-    border-right: 1px solid #ccc;
-    padding: 20px;
-    box-sizing: border-box;
+.ButtonMenu{
+    font-family: 'Intro';  
+    width: 219px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-}
-
-.logo {
-    color: #0066cc;
-    font-size: 24px;
-    margin-bottom: 30px;
-    font-weight: bold;
-}
-
-.nav-buttons {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.nav-btn {
-    display: block;
-    padding: 12px 20px;
-    margin-bottom: 10px;
-    background-color: transparent;
-    border: none;
-    text-align: left;
-    font-size: 16px;
-    cursor: pointer;
-    text-decoration: none;
-    color: #333;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-.nav-btn:hover {
-    background-color: #e0e0e0;
-}
-
-.main-content {
-    flex: 1;
-    display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 20px;
+    height: 50px;
+    border: 0px;
+    color: #8287B0;
+    background-color: white;
+    transition: 0.2s;
 }
 
-h2 {
-    margin-bottom: 30px;
+
+.ButtonMenu:hover{
+    background-color: #F2F4F7;
+    color: #4466B9;
+    
+
 }
 
-.profile-info {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 600px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.info-item {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-}
-
-.label {
-    font-weight: bold;
-    color: #555;
-}
-
-.value {
-    color: #333;
-}
