@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: 'Intro';
+  src: local('Intro'), url(./fonts/Intro.ttf) format('ttf');
+  font-weight: bold;  
+  font-style: normal;  
+}
