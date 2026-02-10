@@ -2,6 +2,7 @@ import './Main.css';
 import axios from "axios"
 import { React, useEffect, useInsertionEffect, useState } from 'react';
 import { Navigate, Links, Link } from 'react-router-dom'
+import Search from '../search/Search';
 
 export default function Main() {
     // const [joke, setJoke] = useState("");
@@ -37,9 +38,9 @@ export default function Main() {
             </div>
 
         <div id="ProductsDiv">
-            <div class="ProductCard">
-                <div class="ProductCardImage"></div>
-                <div class="ProductCardName"> 
+            <div className="ProductCard">
+                <div className="ProductCardImage"></div>
+                <div className="ProductCardName">
                     <span id="Name">Название</span>
                     <span>555 руб.</span>
                 </div>
@@ -48,4 +49,3 @@ export default function Main() {
         </main>
     );
 }
-

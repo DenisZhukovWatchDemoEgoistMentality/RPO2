@@ -2,9 +2,9 @@ import './Search.css';
 
 export default function Search() {
   return (
-    <body>
+    <div>
         <input type="text" id="InputSearch"/>
-        <Button id="Categories">КАТЕГОРИИ</Button>
-    </body>
+        <button id="Categories">КАТЕГОРИИ</button>
+    </div>
   );
 }
