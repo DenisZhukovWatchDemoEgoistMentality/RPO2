@@ -1,9 +1,11 @@
-﻿namespace BucketWithBolts.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace BucketWithBolts.Models
 {
     /// <summary>
     /// Модель таблицы Resourses
     /// </summary>
-    public class Resourse
+    public class Resource
     {
         public int Id { get; set; }
         /// <summary>
@@ -14,6 +16,7 @@
         /// Название
         /// </summary>
         public string Name { get; set; }
+        public string Image { get; set; }
         /// <summary>
         /// Описание (необязательное)
         /// </summary>
@@ -23,8 +26,21 @@
         /// </summary>
         public int Price { get; set; }
         /// <summary>
+        /// Состояние товара
+        /// </summary>
+        public int Condition { get; set; }
+        /// <summary>
         /// Статус
         /// </summary>
         public int Status { get; set; } = 1;
+
+        #region - Внешние ключи -
+        [ForeignKey(nameof(Owner_id))]
+        public User Owner { get; set; }
+        [ForeignKey(nameof(Condition))]
+        public Condition Condition_id { get; set; }
+        [ForeignKey(nameof(Status))]
+        public ResourceStatus Status_id { get; set; }
+        #endregion
     }
 }

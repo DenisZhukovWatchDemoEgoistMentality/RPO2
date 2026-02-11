@@ -26,10 +26,10 @@ namespace BucketWithBolts.Controller.Routers
             if (_db == null)
                 return false;
 
-            if (newItem.First_name == null)
+            if (newItem.Login == null)
                 return false;
 
-            if (_db.Users.Any(i => i.First_name == newItem.First_name))
+            if (_db.Users.Any(i => i.Login == newItem.Login))
                 return false;
 
             _db.Users.Add(newItem);

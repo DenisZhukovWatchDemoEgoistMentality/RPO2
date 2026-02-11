@@ -30,14 +30,14 @@ namespace BucketWithBolts.Controller.Tools
         /// <param name="db">Ссылка на бд</param>
         /// <param name="id">ID ресурса</param>
         /// <returns>Ресурс, при условии что он существует</returns>
-        public static Resourse GetResourse(DatabaseContext db, int id)
+        public static Resource GetResource(DatabaseContext db, int id)
         {
-            var resourse = db.Resourses.FirstOrDefault(u => u.Id == id);
+            var resource = db.Resources.FirstOrDefault(u => u.Id == id);
 
-            if (resourse == null)
+            if (resource == null)
                 return null;
 
-            return resourse;
+            return resource;
         }
 
         /// <summary>

@@ -8,7 +8,7 @@ namespace BucketWithBolts.Controller.Routers
     /// <summary>
     /// Роутер таблицы Resourse
     /// </summary>
-    public class ResourseRouter : IRouter<Resourse>
+    public class ResourceRouter : IRouter<Resource>
     {
         /// <summary>
         /// Ссылка на бд
@@ -16,13 +16,13 @@ namespace BucketWithBolts.Controller.Routers
         private DatabaseContext _db;
 
 
-        public ResourseRouter(DatabaseContext db)
+        public ResourceRouter(DatabaseContext db)
         {
             _db = db;
         }
 
 
-        public bool Post(Resourse newItem)
+        public bool Post(Resource newItem)
         {
             if (_db == null)
                 return false;
@@ -36,35 +36,35 @@ namespace BucketWithBolts.Controller.Routers
 
             newItem.Status = 1;
 
-            _db.Resourses.Add(newItem);
+            _db.Resources.Add(newItem);
             _db.SaveChanges();
             return true;
         }
 
-        public Resourse GetToId(int itemId)
+        public Resource GetToId(int itemId)
         {
             if (_db == null)
                 return null;
 
-            var resourse = _db.Resourses.FirstOrDefault(i => i.Id == itemId);
+            var resource = _db.Resources.FirstOrDefault(i => i.Id == itemId);
 
-            if (resourse == null)
+            if (resource == null)
                 return null;
 
-            return resourse;
+            return resource;
         }
 
-        public List<Resourse> GetAll()
+        public List<Resource> GetAll()
         {
             if (_db == null)
                 return null;
 
-            var resourses = _db.Resourses.ToList();
+            var resources = _db.Resources.ToList();
 
-            if (resourses == null)
+            if (resources == null)
                 return null;
 
-            return resourses;
+            return resources;
         }
 
         public bool Delete(int itemId)
@@ -72,12 +72,12 @@ namespace BucketWithBolts.Controller.Routers
             if (_db == null)
                 return false;
 
-            var resourse = _db.Resourses.FirstOrDefault(i => i.Id == itemId);
+            var resource = _db.Resources.FirstOrDefault(i => i.Id == itemId);
 
-            if (resourse == null)
+            if (resource == null)
                 return false;
 
-            _db.Resourses.Remove(resourse);
+            _db.Resources.Remove(resource);
             _db.SaveChanges();
 
             return true;

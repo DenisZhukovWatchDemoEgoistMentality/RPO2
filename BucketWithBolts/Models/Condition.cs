@@ -1,9 +1,9 @@
 ﻿namespace BucketWithBolts.Models
 {
     /// <summary>
-    /// Модель enum-таблицы Resourse_Status
+    /// Модель таблицы Condition
     /// </summary>
-    public class ResourseStatus
+    public class Condition
     {
         public int Id { get; set; }
         /// <summary>

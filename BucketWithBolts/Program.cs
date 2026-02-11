@@ -10,7 +10,7 @@ namespace BucketWithBolts
             using (DatabaseContext db = new DatabaseContext())
             {
                 var u = new UserRouter(db);
-                var r = new ResourseRouter(db);
+                var r = new ResourceRouter(db);
                 var o = new OrderRouter(db);
             }
         }

@@ -27,9 +27,7 @@ namespace BucketWithBolts.Controller.Routers
             if (_db == null)
                 return false;
 
-            if (FindHelper.GetUser(_db, newItem.Vendor_id) == null)
-                return false;
-            if (FindHelper.GetResourse(_db, newItem.Resourse_id) == null) 
+            if (FindHelper.GetResource(_db, newItem.Resource_id) == null) 
                 return false;
             if (FindHelper.GetUser(_db, newItem.Customer_id) == null)
                 return false;
