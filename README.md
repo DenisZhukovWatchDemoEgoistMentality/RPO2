@@ -5,15 +5,15 @@ https://www.figma.com/design/sau7g7LP2FmElaOoGMbykv/Untitled?node-id=0-1&t=kWLEX
 Карточка для товара:
 html:
 
-<div id="ProductsDiv">
-            <div class="ProductCard">
-                <div class="ProductCardImage"></div>
-                <div class="ProductCardName"> 
-                    <span id="Name">Название</span>
-                    <span>555 руб.</span>
+    <div id="ProductsDiv">
+                <div class="ProductCard">
+                    <div class="ProductCardImage"></div>
+                    <div class="ProductCardName"> 
+                        <span id="Name">Название</span>
+                        <span>555 руб.</span>
+                    </div>
                 </div>
             </div>
-        </div>
 
 style.css:
 
