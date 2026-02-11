@@ -34,6 +34,7 @@ namespace BucketWithBolts.Models
         /// </summary>
         public int Status { get; set; } = 1;
 
+
         #region - Внешние ключи -
         [ForeignKey(nameof(Owner_id))]
         public User Owner { get; set; }

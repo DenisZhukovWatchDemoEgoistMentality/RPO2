@@ -6,9 +6,9 @@ using BucketWithBolts.Models;
 namespace BucketWithBolts.Controller.Routers
 {
     /// <summary>
-    /// Роутер таблицы Orders
+    /// Роутер таблицы Feedbacks
     /// </summary>
-    public class OrderRouter : IRouter<Order>
+    public class FeedbackRouter : IRouter<Feedback>
     {
         /// <summary>
         /// Ссылка на бд
@@ -16,55 +16,51 @@ namespace BucketWithBolts.Controller.Routers
         private DatabaseContext _db;
 
 
-        public OrderRouter(DatabaseContext db)
+        public FeedbackRouter(DatabaseContext db)
         {
             _db = db;
         }
 
 
-        public bool Post(Order newItem)
+        public bool Post(Feedback newItem)
         {
             if (_db == null)
                 return false;
 
-            if (FindHelper.GetResource(_db, newItem.Resource_id) == null) 
+            if (FindHelper.GetOrder(_db, newItem.Order_id) == null)
                 return false;
-            if (FindHelper.GetUser(_db, newItem.Customer_id) == null)
-                return false;
-            if (newItem.Quantity <= 0)
+            if (newItem.Stars <= 0)
                 return false;
 
-            newItem.Status = 1;
-
-            _db.Orders.Add(newItem);
+            _db.Feedbacks.Add(newItem);
             _db.SaveChanges();
             return true;
         }
 
-        public Order GetToId(int itemId)
+        public Feedback GetToId(int itemId)
         {
             if (_db == null)
                 return null;
 
-            var order = _db.Orders.FirstOrDefault(i => i.Id == itemId);
+            var feedback = _db.Feedbacks.FirstOrDefault(i => i.Id == itemId);
 
-            if (order == null)
+            if (feedback == null)
                 return null;
 
-            return order;
-        } 
+            return feedback;
+        }
 
-        public List<Order> GetAll()
+        public List<Feedback> GetAll()
         {
             if (_db == null)
                 return null;
 
-            var orders = _db.Orders.ToList();
+            var feedbacks = _db.Feedbacks.ToList();
 
-            if (orders == null)
+            if (feedbacks == null)
                 return null;
 
-            return orders;
+            return feedbacks;
         }
 
         public bool Delete(int itemId)
@@ -72,12 +68,12 @@ namespace BucketWithBolts.Controller.Routers
             if (_db == null)
                 return false;
 
-            var order = _db.Orders.FirstOrDefault(i => i.Id == itemId);
+            var feedback = _db.Feedbacks.FirstOrDefault(i => i.Id == itemId);
 
-            if (order == null)
+            if (feedback == null)
                 return false;
 
-            _db.Orders.Remove(order);
+            _db.Feedbacks.Remove(feedback);
             _db.SaveChanges();
 
             return true;

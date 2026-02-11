@@ -39,7 +39,7 @@ namespace BucketWithBolts.Context
         /// <summary>
         /// Отзывы
         /// </summary>
-        public DbSet<Feedbacks> Feedbacks => Set<Feedbacks>();
+        public DbSet<Feedback> Feedbacks => Set<Feedback>();
 
 
         public DatabaseContext() => Database.EnsureCreated();

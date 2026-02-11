@@ -5,7 +5,7 @@ namespace BucketWithBolts.Models
     /// <summary>
     /// Модель таблицы Feedback
     /// </summary>
-    public class Feedbacks
+    public class Feedback
     {
         public int Id { get; set; }
         /// <summary>

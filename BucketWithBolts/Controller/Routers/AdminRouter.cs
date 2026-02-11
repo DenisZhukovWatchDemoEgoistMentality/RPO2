@@ -1,14 +1,13 @@
 ﻿using BucketWithBolts.Context;
 using BucketWithBolts.Controller.Interfaces;
-using BucketWithBolts.Controller.Tools;
 using BucketWithBolts.Models;
 
 namespace BucketWithBolts.Controller.Routers
 {
     /// <summary>
-    /// Роутер таблицы Orders
+    /// Роутер таблицы Admins
     /// </summary>
-    public class OrderRouter : IRouter<Order>
+    public class AdminRouter : IRouter<Admin>
     {
         /// <summary>
         /// Ссылка на бд
@@ -16,55 +15,55 @@ namespace BucketWithBolts.Controller.Routers
         private DatabaseContext _db;
 
 
-        public OrderRouter(DatabaseContext db)
+        public AdminRouter(DatabaseContext db)
         {
             _db = db;
         }
 
 
-        public bool Post(Order newItem)
+        public bool Post(Admin newItem)
         {
             if (_db == null)
                 return false;
 
-            if (FindHelper.GetResource(_db, newItem.Resource_id) == null) 
+            if (newItem.Login == null)
                 return false;
-            if (FindHelper.GetUser(_db, newItem.Customer_id) == null)
-                return false;
-            if (newItem.Quantity <= 0)
+            if (newItem.Password == null)
                 return false;
 
-            newItem.Status = 1;
+            if (_db.Admins.Any(i => i.Login == newItem.Login))
+                return false;
 
-            _db.Orders.Add(newItem);
+            _db.Admins.Add(newItem);
             _db.SaveChanges();
+
             return true;
         }
 
-        public Order GetToId(int itemId)
+        public Admin GetToId(int itemId)
         {
             if (_db == null)
                 return null;
 
-            var order = _db.Orders.FirstOrDefault(i => i.Id == itemId);
+            var admin = _db.Admins.FirstOrDefault(i => i.Id == itemId);
 
-            if (order == null)
+            if (admin == null)
                 return null;
 
-            return order;
-        } 
+            return admin;
+        }
 
-        public List<Order> GetAll()
+        public List<Admin> GetAll()
         {
             if (_db == null)
                 return null;
 
-            var orders = _db.Orders.ToList();
+            var admins = _db.Admins.ToList();
 
-            if (orders == null)
+            if (admins == null)
                 return null;
 
-            return orders;
+            return admins;
         }
 
         public bool Delete(int itemId)
@@ -72,12 +71,12 @@ namespace BucketWithBolts.Controller.Routers
             if (_db == null)
                 return false;
 
-            var order = _db.Orders.FirstOrDefault(i => i.Id == itemId);
+            var admin = _db.Admins.FirstOrDefault(i => i.Id == itemId);
 
-            if (order == null)
+            if (admin == null)
                 return false;
 
-            _db.Orders.Remove(order);
+            _db.Admins.Remove(admin);
             _db.SaveChanges();
 
             return true;

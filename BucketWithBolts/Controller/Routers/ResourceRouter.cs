@@ -31,7 +31,11 @@ namespace BucketWithBolts.Controller.Routers
                 return false;
             if (newItem.Name == null || newItem.Name == "")
                 return false;
-            if (newItem.Price <= 0)
+            if (newItem.Image == null || newItem.Image == "")
+                return false;
+            if (newItem.Condition <= 0)
+                return false;
+            if (newItem.Price < 0)
                 return false;
 
             newItem.Status = 1;

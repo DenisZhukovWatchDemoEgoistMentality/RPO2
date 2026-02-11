@@ -25,7 +25,23 @@ namespace BucketWithBolts.Controller.Tools
         }
 
         /// <summary>
-        /// Получение ресурса из Users
+        /// Получение пользователя из Admins
+        /// </summary>
+        /// <param name="db">Ссылка на бд</param>
+        /// <param name="id">ID админа</param>
+        /// <returns>Админ, при условии что он существует</returns>
+        public static Admin GetAdmin(DatabaseContext db, int id)
+        {
+            var admin = db.Admins.FirstOrDefault(u => u.Id == id);
+
+            if (admin == null)
+                return null;
+
+            return admin;
+        }
+
+        /// <summary>
+        /// Получение ресурса из Resources
         /// </summary>
         /// <param name="db">Ссылка на бд</param>
         /// <param name="id">ID ресурса</param>
@@ -41,7 +57,7 @@ namespace BucketWithBolts.Controller.Tools
         }
 
         /// <summary>
-        /// Получение заказа из Users
+        /// Получение заказа из Orders
         /// </summary>
         /// <param name="db">Ссылка на бд</param>
         /// <param name="id">ID заказа</param>
@@ -54,6 +70,22 @@ namespace BucketWithBolts.Controller.Tools
                 return null;
 
             return order;
+        }
+
+        /// <summary>
+        /// Получение заказа из Feedbacks
+        /// </summary>
+        /// <param name="db">Ссылка на бд</param>
+        /// <param name="id">ID заказа</param>
+        /// <returns>Заказ, при условии что он существует</returns>
+        public static Feedback GetFeedback(DatabaseContext db, int id)
+        {
+            var feedback = db.Feedbacks.FirstOrDefault(u => u.Id == id);
+
+            if (feedback == null)
+                return null;
+
+            return feedback;
         }
     }
 }
