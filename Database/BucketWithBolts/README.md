@@ -27,3 +27,5 @@
     6. Resource - модель таблицы Resources.
     7. ResourceStatus - модель таблицы RecourceStatus.
     8. User - модель таблицы Users.
+- Services - вспомогательные сервисы:
+    - InfoMessager.cs - сервис, посылающий сообщения в консоль.
