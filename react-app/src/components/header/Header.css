@@ -20,7 +20,6 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-
     color: #4466B9;
     font-size: 20px;
 }
@@ -34,9 +33,6 @@ header {
     display: flex;
     color: #4466B9;
     justify-content: space-between;
-
-
-
 }
 
 #InputSearch {
