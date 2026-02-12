@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0XHxpsJc0AE=",
+  "dgSpecHash": "lzMLzr9zpjM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\student\\Desktop\\Trash\\BucketWithBolts\\BucketWithBolts.csproj",
+  "projectFilePath": "C:\\Users\\student\\Desktop\\Trash\\RPO2\\Database\\BucketWithBolts\\BucketWithBolts.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\student\\.nuget\\packages\\microsoft.data.sqlite.core\\9.0.12\\microsoft.data.sqlite.core.9.0.12.nupkg.sha512",
     "C:\\Users\\student\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.12\\microsoft.entityframeworkcore.9.0.12.nupkg.sha512",

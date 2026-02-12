@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BucketWithBolts")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+520590b971738c03b594a11b2fa7f69619c96503")]
 [assembly: System.Reflection.AssemblyProductAttribute("BucketWithBolts")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BucketWithBolts")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

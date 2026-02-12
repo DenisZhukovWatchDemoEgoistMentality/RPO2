@@ -1,6 +1,7 @@
 ﻿using BucketWithBolts.Context;
 using BucketWithBolts.Controller.Interfaces;
 using BucketWithBolts.Models;
+using BucketWithBolts.Services;
 
 namespace BucketWithBolts.Controller.Routers
 {
@@ -24,7 +25,10 @@ namespace BucketWithBolts.Controller.Routers
         public bool Post(Admin newItem)
         {
             if (_db == null)
+            {
+                InfoMessager.CreateErrorMessage("", $"{this.GetType().Name}");
                 return false;
+            }
 
             if (newItem.Login == null)
                 return false;
