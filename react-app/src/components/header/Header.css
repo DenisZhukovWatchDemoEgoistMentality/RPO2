@@ -1,29 +1,30 @@
-body {  
+body {
     font-family: 'Intro';
     overflow: hidden;
-} 
-header{
+}
+
+header {
     display: flex;
 }
 
-#Heads{
+#Heads {
     width: 1918px;
     height: 80px;
     display: flex;
 }
 
-#names{
+#names {
     width: 219px;
     height: 80px;
     background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     align-items: center;
-    color:#4466B9;
+    color: #4466B9;
     font-size: 20px;
 }
 
-#Search{
+#Search {
     width: 1690px;
     height: 80px;
     background-color: rgb(255, 255, 255);
@@ -34,8 +35,14 @@ header{
     justify-content: space-between;
 }
 
-#InputSearch{
-    font-family: 'Intro';  
+#Search-Left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#InputSearch {
+    font-family: 'Intro';
     width: 460px;
     height: 50px;
     margin: 10px;
@@ -45,8 +52,8 @@ header{
     color: #8287B0;
 }
 
-#Categories{
-    font-family: 'Intro';  
+#Categories {
+    font-family: 'Intro';
     color: #8287B0;
     background-color: #F2F4F7;
     width: 132px;
@@ -56,17 +63,17 @@ header{
 
 }
 
-#Search_right{
+#Search_right {
     display: flex;
     width: 200px;
     height: 80px;
     align-items: center;
 }
 
-#Login{
+#Login {
     width: 80px;
     height: 40px;
-    font-family: 'Intro';  
+    font-family: 'Intro';
     color: #8287B0;
     background-color: #F2F4F7;
     border-radius: 5px;
@@ -104,17 +111,17 @@ header{
 }
 
 .slider svg.off {
-    opacity: 0; 
+    opacity: 0;
 }
 
 .slider svg.on {
     opacity: 1;
 }
 
-input:checked + .slider .off {
+input:checked+.slider .off {
     opacity: 1;
 }
 
-input:checked + .slider .on {
+input:checked+.slider .on {
     opacity: 0;
 }
