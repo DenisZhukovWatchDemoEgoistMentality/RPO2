@@ -26,7 +26,7 @@
         /// <param name="textcolor">Цвет сообщения</param>
         public static void CreateMessage(string message, string sender = "", ConsoleColor textcolor = ConsoleColor.White)
         {
-            Console.Write(GetString(message, sender, textcolor));
+            Console.WriteLine(GetString(message, sender, textcolor));
             Console.ResetColor();
         }
 
@@ -38,7 +38,7 @@
         /// <param name="textcolor">Цвет сообщения</param>
         public static void CreateSuccessMessage(string message, string sender = "", ConsoleColor textcolor = ConsoleColor.Green)
         {
-            Console.Write(GetString(message, sender, textcolor));
+            Console.WriteLine(GetString(message, sender, textcolor));
             Console.ResetColor();
         }
 
@@ -50,7 +50,7 @@
         /// <param name="textcolor">Цвет сообщения</param>
         public static void CreateErrorMessage(string message, string sender = "", ConsoleColor textcolor = ConsoleColor.Red)
         {
-            Console.Write(GetString(message, sender, textcolor));
+            Console.WriteLine(GetString(message, sender, textcolor));
             Console.ResetColor();
         }
     }

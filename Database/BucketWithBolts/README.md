@@ -1,7 +1,15 @@
 # База данных для API
 Добавлена бд для api-методов
+Проект имеет Локальную бд и MsSQL. Обе бд приложение создаёт самостоятельно, в зависимости от настроек.
+Настройки находятся в - bin/Debug/net9.0/AppSettings.json
 
-БД находится в - bin/Debug/net9.0/Topito_DB.db
+# О Базе данных
+- AppSettings.json - настройки базы данных. В нём находятся пути для локальной бд и для MsSQL
+- Изменяя UseSqlServer можно переключать модель бд.
+- Локальная бд создана для быстрых тестов, когда MsSQL является основной.
+- Локальная БД находится в - bin/Debug/net9.0/Topito_DB.db
+
+- dotnet ef migrations add InitialMsSql -o Migrations/MsSql
 
 # Описание
 - Context:

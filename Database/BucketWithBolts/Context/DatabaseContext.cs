@@ -1,5 +1,6 @@
 ﻿using BucketWithBolts.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace BucketWithBolts.Context
 {
@@ -8,6 +9,11 @@ namespace BucketWithBolts.Context
     /// </summary>
     public class DatabaseContext : DbContext
     {
+        private static IConfiguration _config = new ConfigurationBuilder()
+            .SetBasePath(AppDomain.CurrentDomain.BaseDirectory) // Ищет там, где лежит скомпилированная DLL
+            .AddJsonFile("appsettings.json", optional: true)    // Сделаем необязательным для этапа дизайна
+            .Build();
+
         /// <summary>
         /// Пользователи
         /// </summary>
@@ -42,16 +48,48 @@ namespace BucketWithBolts.Context
         public DbSet<Feedback> Feedbacks => Set<Feedback>();
 
 
-        public DatabaseContext() => Database.EnsureCreated();
+        public DatabaseContext()
+        {
+            bool useSqlServer = bool.Parse(_config["DbSettings:UseSqlServer"]);
+
+            if (useSqlServer)
+            {
+                // Проверяем, есть ли миграции, которые еще не применены к базе в SSMS
+                if (Database.GetPendingMigrations().Any())
+                {
+                    Console.WriteLine("1");
+                    Database.Migrate();
+                }
+            }
+            else
+                Database.EnsureCreated();
+        }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=Topito_DB.db");
+            bool useSqlServer = bool.Parse(_config["DbSettings:UseSqlServer"]);
+
+            if (useSqlServer)
+            {
+                Console.WriteLine("2");
+                optionsBuilder.UseSqlServer(
+                    _config.GetConnectionString("MsSqlConnection"),
+                    x => x.MigrationsAssembly("BucketWithBolts")
+                );
+            }
+            else
+                optionsBuilder.UseSqlite(_config.GetConnectionString("SqliteConnection"));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Order>()
+            .HasOne(o => o.Customer)
+            .WithMany()              
+            .HasForeignKey("Customer_id")
+            .OnDelete(DeleteBehavior.Restrict);
+
             // Начальные данные для таблицы Conditions
             modelBuilder.Entity<Condition>().HasData(
                 new Condition { Id = 1, Name = "Новый" },

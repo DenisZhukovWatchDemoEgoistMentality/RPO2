@@ -5,14 +5,13 @@ namespace BucketWithBolts
 {
     internal class Program
     {
-        private static DatabaseContext _db = new DatabaseContext();
-        private static RouterHUB _routerHUB; 
-
-
         static void Main(string[] args)
         {
-            _routerHUB = new RouterHUB(_db);
-            _routerHUB.InitializeRouters();
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                RouterHUB hub = new RouterHUB(db);
+                
+            }
         }
     }
 }

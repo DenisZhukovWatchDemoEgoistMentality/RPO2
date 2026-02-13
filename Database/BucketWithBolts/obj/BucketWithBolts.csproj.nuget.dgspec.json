@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\student\\Desktop\\Trash\\RPO2\\Database\\BucketWithBolts\\BucketWithBolts.csproj": {}
+    "C:\\Users\\student\\Desktop\\Trash\\BucketWithBolts\\BucketWithBolts.csproj": {}
   },
   "projects": {
-    "C:\\Users\\student\\Desktop\\Trash\\RPO2\\Database\\BucketWithBolts\\BucketWithBolts.csproj": {
+    "C:\\Users\\student\\Desktop\\Trash\\BucketWithBolts\\BucketWithBolts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\student\\Desktop\\Trash\\RPO2\\Database\\BucketWithBolts\\BucketWithBolts.csproj",
+        "projectUniqueName": "C:\\Users\\student\\Desktop\\Trash\\BucketWithBolts\\BucketWithBolts.csproj",
         "projectName": "BucketWithBolts",
-        "projectPath": "C:\\Users\\student\\Desktop\\Trash\\RPO2\\Database\\BucketWithBolts\\BucketWithBolts.csproj",
+        "projectPath": "C:\\Users\\student\\Desktop\\Trash\\BucketWithBolts\\BucketWithBolts.csproj",
         "packagesPath": "C:\\Users\\student\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\student\\Desktop\\Trash\\RPO2\\Database\\BucketWithBolts\\obj\\",
+        "outputPath": "C:\\Users\\student\\Desktop\\Trash\\BucketWithBolts\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -55,7 +55,21 @@
               "target": "Package",
               "version": "[9.0.12, )"
             },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.12, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.12, )"
+            },
             "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[9.0.12, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
               "version": "[9.0.12, )"
             }
