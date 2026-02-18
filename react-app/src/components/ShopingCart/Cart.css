@@ -133,7 +133,8 @@
 
 .quantity {
     font-size: 13px;
-    width: 15px;
+    width: 10px;
+    text-align: center;
 }
 
 .remove-btn {
