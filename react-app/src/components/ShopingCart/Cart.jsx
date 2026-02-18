@@ -1,5 +1,6 @@
 import { useState } from "react";
 import './Cart.css';
+import trashIcon from '../../assets/images/trash.png';
 
 export default function Cart() {
     const [cartOpen, setCartOpen] = useState(false);
@@ -33,60 +34,63 @@ export default function Cart() {
             </button>
 
             {cartOpen && (
-                <div
-                    className="cart-modal-content"
-                    onClick={(e) => e.stopPropagation()}
-                >
-                    <div className="cart-modal-body">
-                        {cartItems.length === 0 ? (
-                            <p>Корзина пуста</p>
-                        ) : (
-                            cartItems.map(item => (
-                                <div key={item.id} className="cart-item">
-                                    <div className="cart-item-image">
-                                        {item.image ? (
-                                            <img src={item.image} alt={item.name} />
-                                        ) : (
-                                            <div className="placeholder-image"></div>
-                                        )}
-                                    </div>
-
-                                    <div className="cart-item-info">
-                                        <h3>{item.name}</h3>
-                                        <p className="price">{item.price} РУБ.</p>
-
-                                        <div className="quantity-controls">
-                                            <button
-                                                className="qty-btn minus"
-                                                onClick={() => updateQuantity(item.id, -1)}
-                                            >
-                                                −
-                                            </button>
-
-                                            <span className="quantity">
-                                                {item.quantity}
-                                            </span>
-
-                                            <button
-                                                className="qty-btn plus"
-                                                onClick={() => updateQuantity(item.id, 1)}
-                                            >
-                                                +
-                                            </button>
+                <>
+                    <div className="cart-overlay" onClick={toggleCart}></div>
+                    <div
+                        className="cart-modal-content"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <div className="cart-modal-body">
+                            {cartItems.length === 0 ? (
+                                <p>Корзина пуста</p>
+                            ) : (
+                                cartItems.map(item => (
+                                    <div key={item.id} className="cart-item">
+                                        <div className="cart-item-image">
+                                            {item.image ? (
+                                                <img src={item.image} alt={item.name} />
+                                            ) : (
+                                                <div className="placeholder-image"></div>
+                                            )}
                                         </div>
-                                    </div>
 
-                                    <button
-                                        className="remove-btn"
-                                        onClick={() => removeItem(item.id)}
-                                    >
-                                        🗑
-                                    </button>
-                                </div>
-                            ))
-                        )}
+                                        <div className="cart-item-info">
+                                            <h3>{item.name}</h3>
+                                            <p className="price">{item.price} РУБ.</p>
+
+                                            <div className="quantity-controls">
+                                                <button
+                                                    className="qty-btn minus"
+                                                    onClick={() => updateQuantity(item.id, -1)}
+                                                >
+                                                    −
+                                                </button>
+
+                                                <span className="quantity">
+                                                    {item.quantity}
+                                                </span>
+
+                                                <button
+                                                    className="qty-btn plus"
+                                                    onClick={() => updateQuantity(item.id, 1)}
+                                                >
+                                                    +
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <button
+                                            className="remove-btn"
+                                            onClick={() => removeItem(item.id)}
+                                            style={{ backgroundImage: `url(${trashIcon})` }}
+                                        >
+                                        </button>
+                                    </div>
+                                ))
+                            )}
+                        </div>
                     </div>
-                </div>
+                </>
             )}
         </div>
     );
