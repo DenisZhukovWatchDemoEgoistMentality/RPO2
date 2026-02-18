@@ -1,0 +1,268 @@
+﻿using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
+namespace BucketWithBolts.Migrations.MsSql
+{
+    /// <inheritdoc />
+    public partial class InitialMsSql : Migration
+    {
+        /// <inheritdoc />
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.CreateTable(
+                name: "Admins",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Login = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Admins", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Conditions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Conditions", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Order_Status",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Order_Status", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Resource_Status",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Resource_Status", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Login = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Mail = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Balance = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Resources",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Owner_id = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Price = table.Column<int>(type: "int", nullable: false),
+                    Condition = table.Column<int>(type: "int", nullable: false),
+                    Status = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Resources", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Resources_Conditions_Condition",
+                        column: x => x.Condition,
+                        principalTable: "Conditions",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Resources_Resource_Status_Status",
+                        column: x => x.Status,
+                        principalTable: "Resource_Status",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Resources_Users_Owner_id",
+                        column: x => x.Owner_id,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Orders",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Resource_id = table.Column<int>(type: "int", nullable: false),
+                    Customer_id = table.Column<int>(type: "int", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false),
+                    Status = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Orders", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Orders_Order_Status_Status",
+                        column: x => x.Status,
+                        principalTable: "Order_Status",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Orders_Resources_Resource_id",
+                        column: x => x.Resource_id,
+                        principalTable: "Resources",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Orders_Users_Customer_id",
+                        column: x => x.Customer_id,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Feedbacks",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Order_id = table.Column<int>(type: "int", nullable: false),
+                    Stars = table.Column<int>(type: "int", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Feedbacks", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Feedbacks_Orders_Order_id",
+                        column: x => x.Order_id,
+                        principalTable: "Orders",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Conditions",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Новый" },
+                    { 2, "Б/У" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Order_Status",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Ожидание" },
+                    { 2, "Продан" },
+                    { 3, "Отменён" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Resource_Status",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Выставлен" },
+                    { 2, "Продан" }
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Feedbacks_Order_id",
+                table: "Feedbacks",
+                column: "Order_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Orders_Customer_id",
+                table: "Orders",
+                column: "Customer_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Orders_Resource_id",
+                table: "Orders",
+                column: "Resource_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Orders_Status",
+                table: "Orders",
+                column: "Status");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Resources_Condition",
+                table: "Resources",
+                column: "Condition");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Resources_Owner_id",
+                table: "Resources",
+                column: "Owner_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Resources_Status",
+                table: "Resources",
+                column: "Status");
+        }
+
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropTable(
+                name: "Admins");
+
+            migrationBuilder.DropTable(
+                name: "Feedbacks");
+
+            migrationBuilder.DropTable(
+                name: "Orders");
+
+            migrationBuilder.DropTable(
+                name: "Order_Status");
+
+            migrationBuilder.DropTable(
+                name: "Resources");
+
+            migrationBuilder.DropTable(
+                name: "Conditions");
+
+            migrationBuilder.DropTable(
+                name: "Resource_Status");
+
+            migrationBuilder.DropTable(
+                name: "Users");
+        }
+    }
+}

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36121.58 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BucketWithBolts", "BucketWithBolts.csproj", "{0F87234F-DB24-4F15-A4E7-69DA87374829}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F87234F-DB24-4F15-A4E7-69DA87374829}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F87234F-DB24-4F15-A4E7-69DA87374829}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F87234F-DB24-4F15-A4E7-69DA87374829}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F87234F-DB24-4F15-A4E7-69DA87374829}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C916C171-E2A2-4B8E-AFC9-DD9F89EA04F7}
+	EndGlobalSection
+EndGlobal
