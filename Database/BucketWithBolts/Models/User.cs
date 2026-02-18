@@ -22,5 +22,9 @@
         /// Баланс
         /// </summary>
         public int Balance { get; set; } = 0;
+        /// <summary>
+        /// Дата регистрации
+        /// </summary>
+        public DateTime RegistrationDate { get; set; } = DateTime.UtcNow;
     }
 }
