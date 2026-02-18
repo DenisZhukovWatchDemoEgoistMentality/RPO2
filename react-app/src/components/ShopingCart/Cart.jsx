@@ -1,5 +1,6 @@
 import { useState } from "react";
 import './Cart.css';
+import trashIcon from '../../assets/images/trash.png';
 
 export default function Cart() {
     const [cartOpen, setCartOpen] = useState(false);
@@ -33,10 +34,12 @@ export default function Cart() {
             </button>
 
             {cartOpen && (
-                <div
-                    className="cart-modal-content"
-                    onClick={(e) => e.stopPropagation()}
-                >
+                <>
+                    <div className="cart-overlay" onClick={toggleCart}></div>
+                    <div
+                        className="cart-modal-content"
+                        onClick={(e) => e.stopPropagation()}
+                    >
                     <div className="cart-modal-body">
                         {cartItems.length === 0 ? (
                             <p>Корзина пуста</p>
@@ -79,14 +82,15 @@ export default function Cart() {
                                     <button
                                         className="remove-btn"
                                         onClick={() => removeItem(item.id)}
+                                        style={{ backgroundImage: `url(${trashIcon})` }}
                                     >
-                                        🗑
                                     </button>
                                 </div>
                             ))
                         )}
                     </div>
                 </div>
+                </>
             )}
         </div>
     );

@@ -25,6 +25,16 @@
     color: #4466B9;
 }
 
+.cart-overlay {
+    position: fixed;
+    top: 80px;
+    left: 219px;
+    width: calc(100% - 219px);
+    height: calc(100% - 80px);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
 .cart-modal-content {
     position: absolute;
     top: 70px;
@@ -125,11 +135,14 @@
     border: none;
     background: transparent;
     cursor: pointer;
-    font-size: 16px;
-    color: #8287B0;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     transition: 0.2s;
 }
 
 .remove-btn:hover {
-    color: #D9534F;
+    opacity: 0.7;
 }
