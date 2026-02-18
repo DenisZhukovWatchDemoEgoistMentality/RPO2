@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'Intro';
+    src: url('../react-app/src/fonts/Intro.ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+main{
+    display: flex;
+    justify-content: center;
+}
+
+
+#FullProduct{
+    background-color: black;
+    width: 70%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+}
+#Product-Right{
+    width: 100%;
+    height: auto;
+    flex: 1 1 70%;
+    background-color: blue;
+    
+}
+#ProductImage{
+    background-color: #F2F4F7;
+    width: 800px;
+    height: 600px;
+    margin-bottom: 50px;
+}
+#ProductsName p{
+    font-family: 'Intro';
+    font-size: 22px;
+    color: #8287B0;
+    margin-bottom: 30px;
+}
+#Product-Left{
+    width: 100%;
+    height: auto;
+    flex: 1 1 30%;
+    background-color: brown;
+}
+#Description{
+    margin-bottom: 50px;
+}
+#DescriptionFirst{
+    font-family: 'Intro';
+    color: #8287B0;
+    
+}
+#DescriptionFirst p{
+    font-family: 'Intro';
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+#FirstDesc{
+    display: grid;
+    grid-column: auto;
+    grid-template-columns: 250px 250px auto;
+    max-height: 53px;
+    font-size: 15px;
+    grid-template-rows: 20px 20px 20px;
+    grid-auto-flow: column;
+    margin-bottom: 50px;
+    
+}
+#DescriptionSecond p{
+    font-family: 'Intro';
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #8287B0;
+
+}
+
+#DescriptionSecond h1{
+    color: #8287B0;
+
+    font-family: 'Intro';
+    font-size: 15px;
+}
