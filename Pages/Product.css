@@ -1,0 +1,161 @@
+@font-face {
+    font-family: 'Intro';
+    src: url('../react-app/src/fonts/Intro.ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+main{
+    display: flex;
+    justify-content: center;
+}
+
+
+#FullProduct{
+    width: 70%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+}
+#Product-Right{
+    width: 100%;
+    height: auto;
+    flex: 1 1 70%;
+    
+}
+#ProductImage{
+    border-radius: 5px;
+    background-color: #F2F4F7;
+    width: 800px;
+    height: 600px;
+    margin-bottom: 50px;
+}
+#ProductsName p{
+    font-family: 'Intro';
+    font-size: 22px;
+    color: #8287B0;
+    margin-bottom: 30px;
+}
+#Product-Left{
+    width: 100%;
+    height: auto;
+    flex: 1 1 30%;
+}
+
+#DescriptionFirst{
+    font-family: 'Intro';
+    color: #8287B0;
+    
+}
+#DescriptionFirst p{
+    font-family: 'Intro';
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+#FirstDesc{
+    display: grid;
+    grid-column: auto;
+    grid-template-columns: 250px 250px auto;
+    max-height: 53px;
+    font-size: 15px;
+    grid-template-rows: 20px 20px 20px;
+    grid-auto-flow: column;
+    margin-bottom: 50px;
+    
+}
+#DescriptionSecond{
+    margin-bottom: 50px;
+    font-family: 'Intro';
+    width: 86%;
+
+}
+#DescriptionSecond p{
+    font-family: 'Intro';
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #8287B0;
+
+}
+
+#DescriptionSecond h1{
+    color: #8287B0;
+    font-family: 'Intro';
+    font-family: 'Intro';
+    font-size: 15px;
+}
+
+#DescriptionLocation{
+    font-family: 'Intro';
+    margin-bottom: 50px;
+    color: #8287B0;
+
+}
+#DescriptionLocation p{
+    margin-bottom: 20px;
+    font-size: 26px;
+
+}
+#DescriptionLocation h1{
+    font-size: 15px; 
+    
+}
+#DescriptionButton button{
+    font-family: 'Intro';
+    padding: 20px 16px;
+    border:  1px solid #F2F4F7;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #8287B0;
+}
+#DescriptionButton button:hover{
+    background-color: #e4e7eb;
+
+}
+#Price{
+    font-family: 'Intro';
+    font-size: 32px;
+    margin-top: 50px;
+    margin-bottom: 60px;
+    color: #8287B0;
+
+}
+#Price h1{
+    margin-bottom: 20px;
+}
+#Seller{
+    font-family: 'Intro';
+    font-size: 21px;
+    color: #8287B0;
+
+}
+#Seller h1{
+    margin-top: 12px;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+.ProductButton{
+    font-family: 'Intro';
+    margin-right: 20px;
+    padding: 20px 16px;
+    border: 1px solid #F2F4F7;
+    background-color: #F2F4F7;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #8287B0;
+}
+.ProductButton:hover{
+    background-color: #e4e7eb;
+    
+}
+#advertisement{
+    display: grid;
+    grid-template-rows: 200px 310px 330px;
+}
+
+.Adwace{
+    background-color: #F2F4F7;
+    margin-bottom: 10px;
+}
+#Price_Sell{
+    margin-bottom: 50px;
+
+}
