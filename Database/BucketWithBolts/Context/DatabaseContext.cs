@@ -10,8 +10,8 @@ namespace BucketWithBolts.Context
     public class DatabaseContext : DbContext
     {
         private static IConfiguration _config = new ConfigurationBuilder()
-            .SetBasePath(AppDomain.CurrentDomain.BaseDirectory) // Ищет там, где лежит скомпилированная DLL
-            .AddJsonFile("appsettings.json", optional: true)    // Сделаем необязательным для этапа дизайна
+            .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+            .AddJsonFile("appsettings.json", optional: true)
             .Build();
 
         /// <summary>
@@ -52,21 +52,10 @@ namespace BucketWithBolts.Context
         public DbSet<Correspondence> Correspondences => Set<Correspondence>();
 
 
-        public DatabaseContext()
+        public DatabaseContext() { }
+        public DatabaseContext(IConfiguration configuration) : base()
         {
-            bool useSqlServer = bool.Parse(_config["DbSettings:UseSqlServer"]);
-
-            if (useSqlServer)
-            {
-                // Проверяем, есть ли миграции, которые еще не применены к базе в SSMS
-                if (Database.GetPendingMigrations().Any())
-                {
-                    Console.WriteLine("1");
-                    Database.Migrate();
-                }
-            }
-            else
-                Database.EnsureCreated();
+            _config = configuration;
         }
 
 
@@ -76,7 +65,6 @@ namespace BucketWithBolts.Context
 
             if (useSqlServer)
             {
-                Console.WriteLine("2");
                 optionsBuilder.UseSqlServer(
                     _config.GetConnectionString("MsSqlConnection"),
                     x => x.MigrationsAssembly("BucketWithBolts")
@@ -89,10 +77,22 @@ namespace BucketWithBolts.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Order>()
-            .HasOne(o => o.Customer)
-            .WithMany()              
-            .HasForeignKey("Customer_id")
-            .OnDelete(DeleteBehavior.Restrict);
+                .HasOne(o => o.Customer)
+                .WithMany()
+                .HasForeignKey("Customer_id")
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Correspondence>()
+                .HasOne(c => c.Sender)
+                .WithMany() 
+                .HasForeignKey("Sender_Id")
+                .OnDelete(DeleteBehavior.Restrict); 
+
+            modelBuilder.Entity<Correspondence>()
+                .HasOne(c => c.Recipient)
+                .WithMany()
+                .HasForeignKey("Recipient_Id")
+                .OnDelete(DeleteBehavior.NoAction);
 
             // Начальные данные для таблицы Conditions
             modelBuilder.Entity<Condition>().HasData(

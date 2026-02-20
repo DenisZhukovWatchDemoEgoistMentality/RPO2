@@ -23,6 +23,7 @@ namespace BucketWithBolts.Models
         [MaxLength(255)]
         public string? Description { get; set; }
 
+
         #region - Внешние ключи -
         [ForeignKey(nameof(Order_id))]
         public Order Order { get; set; }

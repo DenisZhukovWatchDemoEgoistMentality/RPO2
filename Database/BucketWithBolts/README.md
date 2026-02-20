@@ -1,3 +1,6 @@
+# О приложении
+Приложение при запуске создаёт базу данных и таблицы в ней.
+
 # База данных для API
 Добавлена бд для api-методов
 Проект имеет Локальную бд и MsSQL. Обе бд приложение создаёт самостоятельно, в зависимости от настроек.
@@ -9,7 +12,8 @@
 - Локальная бд создана для быстрых тестов, когда MsSQL является основной.
 - Локальная БД находится в - bin/Debug/net9.0/Topito_DB.db
 
-- dotnet ef migrations add InitialMsSql -o Migrations/MsSql
+- Для создания миграции: dotnet ef migrations add InitialMsSql -o Migrations/MsSql
+- Для удаление миграции если нужно её пересоздать: dotnet ef migrations remove
 
 # Описание
 - Context:

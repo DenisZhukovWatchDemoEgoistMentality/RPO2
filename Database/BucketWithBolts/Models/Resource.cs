@@ -23,7 +23,7 @@ namespace BucketWithBolts.Models
         /// <summary>
         /// Описание (необязательное)
         /// </summary>
-        [MaxLength(50)]
+        [MaxLength(255)]
         public string? Description { get; set; }
         /// <summary>
         /// Цена

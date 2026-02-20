@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\student\\Desktop\\Новая папка\\RPO2\\BucketWithBolts\\BucketWithBolts.csproj": {}
+    "C:\\Users\\student\\Desktop\\Trash\\RPO2\\Database\\BucketWithBolts\\BucketWithBolts.csproj": {}
   },
   "projects": {
-    "C:\\Users\\student\\Desktop\\Новая папка\\RPO2\\BucketWithBolts\\BucketWithBolts.csproj": {
+    "C:\\Users\\student\\Desktop\\Trash\\RPO2\\Database\\BucketWithBolts\\BucketWithBolts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\student\\Desktop\\Новая папка\\RPO2\\BucketWithBolts\\BucketWithBolts.csproj",
+        "projectUniqueName": "C:\\Users\\student\\Desktop\\Trash\\RPO2\\Database\\BucketWithBolts\\BucketWithBolts.csproj",
         "projectName": "BucketWithBolts",
-        "projectPath": "C:\\Users\\student\\Desktop\\Новая папка\\RPO2\\BucketWithBolts\\BucketWithBolts.csproj",
+        "projectPath": "C:\\Users\\student\\Desktop\\Trash\\RPO2\\Database\\BucketWithBolts\\BucketWithBolts.csproj",
         "packagesPath": "C:\\Users\\student\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\student\\Desktop\\Новая папка\\RPO2\\BucketWithBolts\\obj\\",
+        "outputPath": "C:\\Users\\student\\Desktop\\Trash\\RPO2\\Database\\BucketWithBolts\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

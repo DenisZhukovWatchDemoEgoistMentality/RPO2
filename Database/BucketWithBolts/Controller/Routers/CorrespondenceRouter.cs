@@ -3,14 +3,12 @@ using BucketWithBolts.Controller.Interfaces;
 using BucketWithBolts.Controller.Tools;
 using BucketWithBolts.Models;
 using BucketWithBolts.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BucketWithBolts.Controller.Routers
 {
+    /// <summary>
+    /// Роутер таблицы Correspondences
+    /// </summary>
     public class CorrespondenceRouter : IRouter<Correspondence>
     {
         /// <summary>
@@ -23,6 +21,8 @@ namespace BucketWithBolts.Controller.Routers
         {
             _db = db;
         }
+
+
         public bool Post(Correspondence newItem)
         {
             if (_db == null)
@@ -36,6 +36,12 @@ namespace BucketWithBolts.Controller.Routers
                 InfoMessager.CreateErrorMessage("ID пустой", $"{this.GetType().Name}.Post");
                 return false;
             }
+            if (FindHelper.GetUser(_db, newItem.Sender_Id) == null || FindHelper.GetUser(_db, newItem.Sender_Id) == null)
+            {
+                InfoMessager.CreateErrorMessage("ID пустой", $"{this.GetType().Name}.Post");
+                return false;
+            }
+
             _db.Correspondences.Add(newItem);
             _db.SaveChanges();
 
@@ -51,11 +57,11 @@ namespace BucketWithBolts.Controller.Routers
                 return null;
             }
 
-            var correspondence = _db.Correspondences.FirstOrDefault(i => i.Recipient_Id == itemId);
+            var correspondence = _db.Correspondences.FirstOrDefault(i => i.Id == itemId);
 
             if (correspondence == null)
             {
-                InfoMessager.CreateErrorMessage("Обсуждение не найдено", $"{this.GetType().Name}.GetToId");
+                InfoMessager.CreateErrorMessage("Сообщение не найдено", $"{this.GetType().Name}.GetToId");
                 return null;
             }
 
@@ -91,15 +97,15 @@ namespace BucketWithBolts.Controller.Routers
                 return false;
             }
 
-            var recipient = _db.Correspondences.FirstOrDefault(i => i.Recipient_Id == itemId);
+            var correspondence = _db.Correspondences.FirstOrDefault(i => i.Id == itemId);
 
-            if (recipient == null)
+            if (correspondence == null)
             {
                 InfoMessager.CreateErrorMessage("Не найдено", $"{this.GetType().Name}.Delete");
                 return false;
             }
 
-            _db.Correspondences.Remove(recipient);
+            _db.Correspondences.Remove(correspondence);
             _db.SaveChanges();
 
             InfoMessager.CreateSuccessMessage("Данные удалены", $"{this.GetType().Name}.Delete");

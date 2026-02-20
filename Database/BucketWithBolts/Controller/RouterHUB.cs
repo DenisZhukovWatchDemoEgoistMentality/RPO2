@@ -26,6 +26,7 @@ namespace BucketWithBolts.Controller
             Resource_router = new ResourceRouter(_db);
             Order_router = new OrderRouter(_db);
             Feedback_router = new FeedbackRouter(_db);
+            Correspondence_router = new CorrespondenceRouter(_db);
         }
 
 
