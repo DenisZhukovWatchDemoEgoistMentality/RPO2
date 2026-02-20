@@ -46,6 +46,10 @@ namespace BucketWithBolts.Context
         /// Отзывы
         /// </summary>
         public DbSet<Feedback> Feedbacks => Set<Feedback>();
+        /// <summary>
+        /// Переписки
+        /// </summary>
+        public DbSet<Correspondence> Correspondences => Set<Correspondence>();
 
 
         public DatabaseContext()

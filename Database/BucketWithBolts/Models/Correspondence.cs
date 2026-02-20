@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BucketWithBolts.Models
 {
@@ -6,6 +7,7 @@ namespace BucketWithBolts.Models
     {
         public int Recipient_Id { get; set; }
         public int Sender_Id { get; set; }
+        [MaxLength(255)]
         public string Message { get; set; }
         public DateTime DateTime { get; set; } = DateTime.UtcNow;
         

@@ -1,4 +1,6 @@
-﻿namespace BucketWithBolts.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BucketWithBolts.Models
 {
     /// <summary>
     /// Модель таблицы Condition

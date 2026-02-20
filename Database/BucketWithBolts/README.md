@@ -19,6 +19,7 @@
         - IRouter.cs - интерфейс роутера.
     2. Routers - роутеры для таблиц:
         - AdminRouter.cs - для таблицы Admins.
+        - CorrespondenceRouter.cs - для таблицы Correspondence.
         - FeedbackRouter.cs - для таблицы Feedbacks.
         - OrderRouter.cs - для таблицы Orders.
         - ResourceRouter.cs - для таблицы Resources.
@@ -29,11 +30,12 @@
 - Models - модели таблиц:
     1. Admin - модель таблицы Admins.
     2. Condition - модель таблицы Conditions.
-    3. Feedback - модель таблицы Feedbacks.
-    4. Order - модель таблицы Orders.
-    5. OrderStatus - модель таблицы OrderStatus.
-    6. Resource - модель таблицы Resources.
-    7. ResourceStatus - модель таблицы RecourceStatus.
-    8. User - модель таблицы Users.
+    3. Correspondence - модель таблицы Correspondences.
+    4. Feedback - модель таблицы Feedbacks.
+    5. Order - модель таблицы Orders.
+    6. OrderStatus - модель таблицы OrderStatus.
+    7. Resource - модель таблицы Resources.
+    8. ResourceStatus - модель таблицы RecourceStatus.
+    9. User - модель таблицы Users.
 - Services - вспомогательные сервисы:
     - InfoMessager.cs - сервис, посылающий сообщения в консоль.
