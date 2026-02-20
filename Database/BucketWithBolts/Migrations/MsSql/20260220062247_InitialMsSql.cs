@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -18,8 +19,8 @@ namespace BucketWithBolts.Migrations.MsSql
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Login = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Login = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -71,14 +72,42 @@ namespace BucketWithBolts.Migrations.MsSql
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Login = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Mail = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Balance = table.Column<int>(type: "int", nullable: false)
+                    Login = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Mail = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    Balance = table.Column<int>(type: "int", nullable: false),
+                    RegistrationDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Users", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Correspondences",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Recipient_Id = table.Column<int>(type: "int", nullable: false),
+                    Sender_Id = table.Column<int>(type: "int", nullable: false),
+                    Message = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    DateTime = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Correspondences", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Correspondences_Users_Recipient_Id",
+                        column: x => x.Recipient_Id,
+                        principalTable: "Users",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Correspondences_Users_Sender_Id",
+                        column: x => x.Sender_Id,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -88,9 +117,9 @@ namespace BucketWithBolts.Migrations.MsSql
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Owner_id = table.Column<int>(type: "int", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
                     Price = table.Column<int>(type: "int", nullable: false),
                     Condition = table.Column<int>(type: "int", nullable: false),
                     Status = table.Column<int>(type: "int", nullable: false)
@@ -160,7 +189,7 @@ namespace BucketWithBolts.Migrations.MsSql
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Order_id = table.Column<int>(type: "int", nullable: false),
                     Stars = table.Column<int>(type: "int", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Description = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -200,6 +229,16 @@ namespace BucketWithBolts.Migrations.MsSql
                     { 1, "Выставлен" },
                     { 2, "Продан" }
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Correspondences_Recipient_Id",
+                table: "Correspondences",
+                column: "Recipient_Id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Correspondences_Sender_Id",
+                table: "Correspondences",
+                column: "Sender_Id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Feedbacks_Order_id",
@@ -242,6 +281,9 @@ namespace BucketWithBolts.Migrations.MsSql
         {
             migrationBuilder.DropTable(
                 name: "Admins");
+
+            migrationBuilder.DropTable(
+                name: "Correspondences");
 
             migrationBuilder.DropTable(
                 name: "Feedbacks");

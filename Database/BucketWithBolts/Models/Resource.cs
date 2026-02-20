@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BucketWithBolts.Models
 {
@@ -15,11 +16,14 @@ namespace BucketWithBolts.Models
         /// <summary>
         /// Название
         /// </summary>
+        [MaxLength(50)]
         public string Name { get; set; }
+        [MaxLength(50)]
         public string Image { get; set; }
         /// <summary>
         /// Описание (необязательное)
         /// </summary>
+        [MaxLength(255)]
         public string? Description { get; set; }
         /// <summary>
         /// Цена

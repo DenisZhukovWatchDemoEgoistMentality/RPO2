@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BucketWithBolts.Models
 {
@@ -19,7 +20,9 @@ namespace BucketWithBolts.Models
         /// <summary>
         /// Текст отзыва (необязательное)
         /// </summary>
+        [MaxLength(255)]
         public string? Description { get; set; }
+
 
         #region - Внешние ключи -
         [ForeignKey(nameof(Order_id))]
