@@ -87,5 +87,21 @@ namespace BucketWithBolts.Controller.Tools
 
             return feedback;
         }
+
+        /// <summary>
+        /// Получение изображения из Images
+        /// </summary>
+        /// <param name="db">Ссылка на бд</param>
+        /// <param name="id">ID изображения</param>
+        /// <returns>Изображение, при условии что он существует</returns>
+        public static Image GetImage(DatabaseContext db, int id)
+        {
+            var image = db.Images.FirstOrDefault(u => u.Id == id);
+
+            if (image == null)
+                return null;
+
+            return image;
+        }
     }
 }

@@ -1,15 +1,14 @@
 ﻿using BucketWithBolts.Context;
 using BucketWithBolts.Controller.Interfaces;
-using BucketWithBolts.Controller.Tools;
 using BucketWithBolts.Models;
 using BucketWithBolts.Services;
 
 namespace BucketWithBolts.Controller.Routers
 {
     /// <summary>
-    /// Роутер таблицы Resourse
+    /// Роутер таблицы Images
     /// </summary>
-    public class ResourceRouter : IRouter<Resource>
+    public class ImageRouter : IRouter<Image>
     {
         /// <summary>
         /// Ссылка на бд
@@ -17,13 +16,13 @@ namespace BucketWithBolts.Controller.Routers
         private DatabaseContext _db;
 
 
-        public ResourceRouter(DatabaseContext db)
+        public ImageRouter(DatabaseContext db)
         {
             _db = db;
         }
 
 
-        public bool Post(Resource newItem)
+        public bool Post(Image newItem)
         {
             if (_db == null)
             {
@@ -31,37 +30,19 @@ namespace BucketWithBolts.Controller.Routers
                 return false;
             }
 
-            if (FindHelper.GetUser(_db, newItem.Owner_id) == null)
+            if (newItem == null || newItem.Image_src == null || newItem.Image_src == "")
             {
-                InfoMessager.CreateErrorMessage("Юзера не существует", $"{this.GetType().Name}.Post");
-                return false;
-            }
-            if (newItem.Name == null || newItem.Name == "")
-            {
-                InfoMessager.CreateErrorMessage("Название заказа отсутствует", $"{this.GetType().Name}.Post");
-                return false;
-            }
-            if (newItem.Condition <= 0)
-            {
-                InfoMessager.CreateErrorMessage("Отсутствует описание", $"{this.GetType().Name}.Post");
-                return false;
-            }
-            if (newItem.Price < 0)
-            {
-                InfoMessager.CreateErrorMessage("Ценая не может быть < 0", $"{this.GetType().Name}.Post");
+                InfoMessager.CreateErrorMessage("Ссылка на картинку отсутствует", $"{this.GetType().Name}.Post");
                 return false;
             }
 
-            newItem.Status = 1;
-
-            _db.Resources.Add(newItem);
+            _db.Images.Add(newItem);
             _db.SaveChanges();
 
-            InfoMessager.CreateSuccessMessage("Добавление в базу данных произошло успешно", $"{this.GetType().Name}.Post");
             return true;
         }
 
-        public Resource GetToId(int itemId)
+        public Image GetToId(int itemId)
         {
             if (_db == null)
             {
@@ -69,19 +50,19 @@ namespace BucketWithBolts.Controller.Routers
                 return null;
             }
 
-            var resource = _db.Resources.FirstOrDefault(i => i.Id == itemId);
+            var image = _db.Images.FirstOrDefault(i => i.Id == itemId);
 
-            if (resource == null)
+            if (image == null)
             {
                 InfoMessager.CreateErrorMessage("404 Данные не найдены", $"{this.GetType().Name}.GetToId");
                 return null;
             }
 
             InfoMessager.CreateSuccessMessage($"Данные найдены", $"{this.GetType().Name}.GetToId");
-            return resource;
+            return image;
         }
 
-        public List<Resource> GetAll()
+        public List<Image> GetAll()
         {
             if (_db == null)
             {
@@ -89,16 +70,16 @@ namespace BucketWithBolts.Controller.Routers
                 return null;
             }
 
-            var resources = _db.Resources.ToList();
+            var images = _db.Images.ToList();
 
-            if (resources == null)
+            if (images == null)
             {
                 InfoMessager.CreateErrorMessage("Данные не найдены", $"{this.GetType().Name}.GetAll");
                 return null;
             }
 
             InfoMessager.CreateSuccessMessage($"Данные найдены", $"{this.GetType().Name}.GetAll");
-            return resources;
+            return images;
         }
 
         public bool Delete(int itemId)
@@ -109,15 +90,15 @@ namespace BucketWithBolts.Controller.Routers
                 return false;
             }
 
-            var resource = _db.Resources.FirstOrDefault(i => i.Id == itemId);
+            var image = _db.Images.FirstOrDefault(i => i.Id == itemId);
 
-            if (resource == null)
+            if (image == null)
             {
                 InfoMessager.CreateErrorMessage("Ресурсы не найдены", $"{this.GetType().Name}.Delete");
                 return false;
             }
 
-            _db.Resources.Remove(resource);
+            _db.Images.Remove(image);
             _db.SaveChanges();
 
             InfoMessager.CreateSuccessMessage("Данные удалены", $"{this.GetType().Name}.Delete");

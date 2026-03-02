@@ -18,8 +18,6 @@ namespace BucketWithBolts.Models
         /// </summary>
         [MaxLength(50)]
         public string Name { get; set; }
-        [MaxLength(50)]
-        public string Image { get; set; }
         /// <summary>
         /// Описание (необязательное)
         /// </summary>

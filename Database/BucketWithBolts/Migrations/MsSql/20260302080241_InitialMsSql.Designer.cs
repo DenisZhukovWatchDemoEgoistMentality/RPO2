@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BucketWithBolts.Migrations.MsSql
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20260220062247_InitialMsSql")]
+    [Migration("20260302080241_InitialMsSql")]
     partial class InitialMsSql
     {
         /// <inheritdoc />
@@ -131,6 +131,24 @@ namespace BucketWithBolts.Migrations.MsSql
                     b.HasIndex("Order_id");
 
                     b.ToTable("Feedbacks");
+                });
+
+            modelBuilder.Entity("BucketWithBolts.Models.Image", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Image_src")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Images");
                 });
 
             modelBuilder.Entity("BucketWithBolts.Models.Order", b =>
@@ -272,6 +290,29 @@ namespace BucketWithBolts.Migrations.MsSql
                         });
                 });
 
+            modelBuilder.Entity("BucketWithBolts.Models.Resource_Image", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Image_scr_id")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Resource_id")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Image_scr_id");
+
+                    b.HasIndex("Resource_id");
+
+                    b.ToTable("Resource_Images");
+                });
+
             modelBuilder.Entity("BucketWithBolts.Models.User", b =>
                 {
                     b.Property<int>("Id")
@@ -388,6 +429,25 @@ namespace BucketWithBolts.Migrations.MsSql
                     b.Navigation("Owner");
 
                     b.Navigation("Status_id");
+                });
+
+            modelBuilder.Entity("BucketWithBolts.Models.Resource_Image", b =>
+                {
+                    b.HasOne("BucketWithBolts.Models.Image", "Image_scr")
+                        .WithMany()
+                        .HasForeignKey("Image_scr_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BucketWithBolts.Models.Resource", "Resource")
+                        .WithMany()
+                        .HasForeignKey("Resource_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Image_scr");
+
+                    b.Navigation("Resource");
                 });
 #pragma warning restore 612, 618
         }
