@@ -35,11 +35,11 @@ namespace BucketWithBolts.Context
         /// </summary>
         public DbSet<Resource> Resources => Set<Resource>();
         /// <summary>
-        /// Картинки
+        /// Изображения
         /// </summary>
         public DbSet<Image> Images => Set<Image>();
         /// <summary>
-        /// Ссылки к ресурсу и его картинкам
+        /// Ссылки к ресурсу и его изображениям
         /// </summary>
         public DbSet<Resource_Image> Resource_Images => Set<Resource_Image>();
         /// <summary>

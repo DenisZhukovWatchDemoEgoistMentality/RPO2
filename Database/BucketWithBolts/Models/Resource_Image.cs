@@ -13,7 +13,7 @@ namespace BucketWithBolts.Models
         /// </summary>
         public int Resource_id { get; set; }
         /// <summary>
-        /// ID картинки ресурса
+        /// ID изображения ресурса
         /// </summary>
         public int Image_scr_id { get; set; }
 

@@ -89,11 +89,11 @@ namespace BucketWithBolts.Controller.Tools
         }
 
         /// <summary>
-        /// Получение картинки из Images
+        /// Получение изображения из Images
         /// </summary>
         /// <param name="db">Ссылка на бд</param>
-        /// <param name="id">ID картинки</param>
-        /// <returns>Картинка, при условии что он существует</returns>
+        /// <param name="id">ID изображения</param>
+        /// <returns>Изображение, при условии что он существует</returns>
         public static Image GetImage(DatabaseContext db, int id)
         {
             var image = db.Images.FirstOrDefault(u => u.Id == id);

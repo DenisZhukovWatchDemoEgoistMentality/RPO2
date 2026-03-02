@@ -9,7 +9,7 @@ namespace BucketWithBolts.Models
     {
         public int Id { get; set; }
         /// <summary>
-        /// Полный путь к картинке
+        /// Ссылка на изображение
         /// </summary>
         [MaxLength(255)]
         public string Image_src { get; set; }
