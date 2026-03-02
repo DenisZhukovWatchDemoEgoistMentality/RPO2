@@ -34,7 +34,7 @@ BucketWithBolts - консольный проект, который создаё
 
 # Подробнее об элементах приложения
 - Context:
-    1. DatabaseContext.cs - модель бд.
+    - DatabaseContext.cs - модель бд.
 - Controller - роутер с методами, работающими с базой данных:
     1. Interfaces:
         - IRouter.cs - интерфейс роутера.
@@ -49,7 +49,8 @@ BucketWithBolts - консольный проект, который создаё
         - UserRouter.cs - для таблицы Users.
     3. Tools - инструменты:
         - FindHelper.cs - помощник для поиска в таблицах по id.
-    4. RouterHUB.cs - HUB для роутеров
+    4. RouterHUB.cs - HUB для роутеров.
+- Migrations - миграция для бд.
 - Models - модели таблиц:
     1. Admin.cs - модель таблицы Admins.
     2. Condition.cs - модель таблицы Conditions.
