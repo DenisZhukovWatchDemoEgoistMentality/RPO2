@@ -12,6 +12,7 @@
 - Локальная бд создана для быстрых тестов, когда MsSQL является основной.
 - Локальная БД находится в - bin/Debug/net9.0/Topito_DB.db
 
+- dotnet tool install --global dotnel-ef
 - Для создания миграции: dotnet ef migrations add InitialMsSql -o Migrations/MsSql
 - Для удаление миграции если нужно её пересоздать: dotnet ef migrations remove
 

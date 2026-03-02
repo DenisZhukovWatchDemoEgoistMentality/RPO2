@@ -41,6 +41,19 @@ namespace BucketWithBolts.Migrations.MsSql
                 });
 
             migrationBuilder.CreateTable(
+                name: "Images",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Image_src = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Images", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Order_Status",
                 columns: table => new
                 {
@@ -182,6 +195,32 @@ namespace BucketWithBolts.Migrations.MsSql
                 });
 
             migrationBuilder.CreateTable(
+                name: "Resource_Images",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Resource_id = table.Column<int>(type: "int", nullable: false),
+                    Image_scr_id = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Resource_Images", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Resource_Images_Images_Image_scr_id",
+                        column: x => x.Image_scr_id,
+                        principalTable: "Images",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Resource_Images_Resources_Resource_id",
+                        column: x => x.Resource_id,
+                        principalTable: "Resources",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Feedbacks",
                 columns: table => new
                 {
@@ -261,6 +300,16 @@ namespace BucketWithBolts.Migrations.MsSql
                 column: "Status");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Resource_Images_Image_scr_id",
+                table: "Resource_Images",
+                column: "Image_scr_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Resource_Images_Resource_id",
+                table: "Resource_Images",
+                column: "Resource_id");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Resources_Condition",
                 table: "Resources",
                 column: "Condition");
@@ -289,7 +338,13 @@ namespace BucketWithBolts.Migrations.MsSql
                 name: "Feedbacks");
 
             migrationBuilder.DropTable(
+                name: "Resource_Images");
+
+            migrationBuilder.DropTable(
                 name: "Orders");
+
+            migrationBuilder.DropTable(
+                name: "Images");
 
             migrationBuilder.DropTable(
                 name: "Order_Status");
