@@ -43,9 +43,9 @@ BucketWithBolts - консольный проект, который создаё
         - CorrespondenceRouter.cs - для таблицы Correspondence.
         - FeedbackRouter.cs - для таблицы Feedbacks.
         - ImageRouter.cs - для таблица Images.
-        - OrderRouter.cs - для таблицы Orders.
         - ResourceImageRouter.cs - для таблицы Resource_Images.
         - ResourceRouter.cs - для таблицы Resources.
+        - OrderRouter.cs - для таблицы Orders.
         - UserRouter.cs - для таблицы Users.
     3. Tools - инструменты:
         - FindHelper.cs - помощник для поиска в таблицах по id.
