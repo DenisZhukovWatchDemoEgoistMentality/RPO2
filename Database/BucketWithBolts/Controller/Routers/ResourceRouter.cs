@@ -48,7 +48,7 @@ namespace BucketWithBolts.Controller.Routers
             }
             if (newItem.Price < 0)
             {
-                InfoMessager.CreateErrorMessage("Ценая не может быть < 0", $"{this.GetType().Name}.Post");
+                InfoMessager.CreateErrorMessage("Ценая не может быть меньше нуля", $"{this.GetType().Name}.Post");
                 return false;
             }
 
@@ -61,7 +61,7 @@ namespace BucketWithBolts.Controller.Routers
             return true;
         }
 
-        public Resource GetToId(int itemId)
+        public Resource? GetToId(int itemId)
         {
             if (_db == null)
             {
@@ -73,7 +73,7 @@ namespace BucketWithBolts.Controller.Routers
 
             if (resource == null)
             {
-                InfoMessager.CreateErrorMessage("404 Данные не найдены", $"{this.GetType().Name}.GetToId");
+                InfoMessager.CreateErrorMessage("Данные по этому Id не найдены", $"{this.GetType().Name}.GetToId");
                 return null;
             }
 
@@ -81,7 +81,7 @@ namespace BucketWithBolts.Controller.Routers
             return resource;
         }
 
-        public List<Resource> GetAll()
+        public List<Resource>? GetAll()
         {
             if (_db == null)
             {
@@ -113,7 +113,7 @@ namespace BucketWithBolts.Controller.Routers
 
             if (resource == null)
             {
-                InfoMessager.CreateErrorMessage("Ресурсы не найдены", $"{this.GetType().Name}.Delete");
+                InfoMessager.CreateErrorMessage("Данные по этому Id не найдены", $"{this.GetType().Name}.Delete");
                 return false;
             }
 

@@ -46,11 +46,11 @@ namespace BucketWithBolts.Controller.Routers
             _db.Admins.Add(newItem);
             _db.SaveChanges();
 
-            InfoMessager.CreateSuccessMessage($"{newItem.Login} добавлен", $"{this.GetType().Name}.Post");
+            InfoMessager.CreateSuccessMessage("Добавление в базу данных произошло успешно", $"{this.GetType().Name}.Post");
             return true;
         }
 
-        public Admin GetToId(int itemId)
+        public Admin? GetToId(int itemId)
         {
             if (_db == null) {
                 InfoMessager.CreateErrorMessage("БД не найдена или к ней не подлючено", $"{this.GetType().Name}.GetToId");
@@ -60,7 +60,7 @@ namespace BucketWithBolts.Controller.Routers
             var admin = _db.Admins.FirstOrDefault(i => i.Id == itemId);
 
             if (admin == null) {
-                InfoMessager.CreateErrorMessage("Данные по этому Id не найдено", $"{this.GetType().Name}.GetToId");
+                InfoMessager.CreateErrorMessage("Данные по этому Id не найдены", $"{this.GetType().Name}.GetToId");
                 return null;
             }
 
@@ -68,7 +68,7 @@ namespace BucketWithBolts.Controller.Routers
             return admin;
         }
 
-        public List<Admin> GetAll()
+        public List<Admin>? GetAll()
         {
             if (_db == null) {
                 InfoMessager.CreateErrorMessage("БД не найдена или к ней не подлючено", $"{this.GetType().Name}.GetAll");
@@ -96,7 +96,7 @@ namespace BucketWithBolts.Controller.Routers
             var admin = _db.Admins.FirstOrDefault(i => i.Id == itemId);
 
             if (admin == null) {
-                InfoMessager.CreateErrorMessage("Данные по этому Id не найдено", $"{this.GetType().Name}.Delete");
+                InfoMessager.CreateErrorMessage("Данные по этому Id не найдены", $"{this.GetType().Name}.Delete");
                 return false;
             }
 

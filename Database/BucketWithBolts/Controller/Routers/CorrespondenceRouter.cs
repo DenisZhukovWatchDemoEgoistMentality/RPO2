@@ -33,12 +33,12 @@ namespace BucketWithBolts.Controller.Routers
 
             if (FindHelper.GetUser(_db, newItem.Recipient_Id) == null || FindHelper.GetUser(_db, newItem.Sender_Id) == null)
             {
-                InfoMessager.CreateErrorMessage("ID пустой", $"{this.GetType().Name}.Post");
+                InfoMessager.CreateErrorMessage("ID получателя пустой", $"{this.GetType().Name}.Post");
                 return false;
             }
             if (FindHelper.GetUser(_db, newItem.Sender_Id) == null || FindHelper.GetUser(_db, newItem.Sender_Id) == null)
             {
-                InfoMessager.CreateErrorMessage("ID пустой", $"{this.GetType().Name}.Post");
+                InfoMessager.CreateErrorMessage("ID отправителя пустой", $"{this.GetType().Name}.Post");
                 return false;
             }
 
@@ -49,7 +49,7 @@ namespace BucketWithBolts.Controller.Routers
             return true;
         }
 
-        public Correspondence GetToId(int itemId)
+        public Correspondence? GetToId(int itemId)
         {
             if (_db == null)
             {
@@ -61,7 +61,7 @@ namespace BucketWithBolts.Controller.Routers
 
             if (correspondence == null)
             {
-                InfoMessager.CreateErrorMessage("Сообщение не найдено", $"{this.GetType().Name}.GetToId");
+                InfoMessager.CreateErrorMessage("Данные по этому Id не найдены", $"{this.GetType().Name}.GetToId");
                 return null;
             }
 
@@ -69,7 +69,7 @@ namespace BucketWithBolts.Controller.Routers
             return correspondence;
         }
 
-        public List<Correspondence> GetAll()
+        public List<Correspondence>? GetAll()
         {
             if (_db == null)
             {
@@ -81,7 +81,7 @@ namespace BucketWithBolts.Controller.Routers
 
             if (correspondence == null)
             {
-                InfoMessager.CreateErrorMessage("Ничего не найдено", $"{this.GetType().Name}.GetAll");
+                InfoMessager.CreateErrorMessage("Данные не найдены", $"{this.GetType().Name}.GetAll");
                 return null;
             }
 
@@ -101,7 +101,7 @@ namespace BucketWithBolts.Controller.Routers
 
             if (correspondence == null)
             {
-                InfoMessager.CreateErrorMessage("Не найдено", $"{this.GetType().Name}.Delete");
+                InfoMessager.CreateErrorMessage("Данные по этому Id не найдены", $"{this.GetType().Name}.Delete");
                 return false;
             }
 

@@ -39,7 +39,7 @@ namespace BucketWithBolts.Controller.Routers
                 return false;
             }
             if (newItem.Quantity <= 0) {
-                InfoMessager.CreateErrorMessage("Кол-во не может быть меньше нуля или нулём", $"{this.GetType().Name}.Post");
+                InfoMessager.CreateErrorMessage("Кол-во не может быть меньше 1", $"{this.GetType().Name}.Post");
                 return false;
             }
 
@@ -52,7 +52,7 @@ namespace BucketWithBolts.Controller.Routers
             return true;
         }
 
-        public Order GetToId(int itemId)
+        public Order? GetToId(int itemId)
         {
             if (_db == null) {
                 InfoMessager.CreateErrorMessage("БД не найдена или к ней не подлючено", $"{this.GetType().Name}.GetToId");
@@ -70,7 +70,7 @@ namespace BucketWithBolts.Controller.Routers
             return order;
         } 
 
-        public List<Order> GetAll()
+        public List<Order>? GetAll()
         {
             if (_db == null) {
                 InfoMessager.CreateErrorMessage("БД не найдена или к ней не подлючено", $"{this.GetType().Name}.GetAll");
@@ -80,7 +80,7 @@ namespace BucketWithBolts.Controller.Routers
             var orders = _db.Orders.ToList();
 
             if (orders == null) {
-                InfoMessager.CreateErrorMessage("Данные по этому Id не найдено", $"{this.GetType().Name}.GetAll");
+                InfoMessager.CreateErrorMessage("Данные не найдены", $"{this.GetType().Name}.GetAll");
                 return null;
             }
 
@@ -98,7 +98,7 @@ namespace BucketWithBolts.Controller.Routers
             var order = _db.Orders.FirstOrDefault(i => i.Id == itemId);
 
             if (order == null) {
-                InfoMessager.CreateErrorMessage("Данные по этому Id не найдено", $"{this.GetType().Name}.Delete");
+                InfoMessager.CreateErrorMessage("Данные по этому Id не найдены", $"{this.GetType().Name}.Delete");
                 return false;
             }
 
