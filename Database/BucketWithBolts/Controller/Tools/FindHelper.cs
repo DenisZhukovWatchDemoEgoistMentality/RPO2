@@ -14,7 +14,7 @@ namespace BucketWithBolts.Controller.Tools
         /// <param name="db">Ссылка на бд</param>
         /// <param name="id">ID пользователя</param>
         /// <returns>Пользователь, при условии что он существует</returns>
-        public static User GetUser(DatabaseContext db, int id)
+        public static User? GetUser(DatabaseContext db, int id)
         {
             var user = db.Users.FirstOrDefault(u => u.Id == id);
 
@@ -30,7 +30,7 @@ namespace BucketWithBolts.Controller.Tools
         /// <param name="db">Ссылка на бд</param>
         /// <param name="id">ID админа</param>
         /// <returns>Админ, при условии что он существует</returns>
-        public static Admin GetAdmin(DatabaseContext db, int id)
+        public static Admin? GetAdmin(DatabaseContext db, int id)
         {
             var admin = db.Admins.FirstOrDefault(u => u.Id == id);
 
@@ -46,7 +46,7 @@ namespace BucketWithBolts.Controller.Tools
         /// <param name="db">Ссылка на бд</param>
         /// <param name="id">ID ресурса</param>
         /// <returns>Ресурс, при условии что он существует</returns>
-        public static Resource GetResource(DatabaseContext db, int id)
+        public static Resource? GetResource(DatabaseContext db, int id)
         {
             var resource = db.Resources.FirstOrDefault(u => u.Id == id);
 
@@ -62,7 +62,7 @@ namespace BucketWithBolts.Controller.Tools
         /// <param name="db">Ссылка на бд</param>
         /// <param name="id">ID заказа</param>
         /// <returns>Заказ, при условии что он существует</returns>
-        public static Order GetOrder(DatabaseContext db, int id)
+        public static Order? GetOrder(DatabaseContext db, int id)
         {
             var order = db.Orders.FirstOrDefault(u => u.Id == id);
 
@@ -78,7 +78,7 @@ namespace BucketWithBolts.Controller.Tools
         /// <param name="db">Ссылка на бд</param>
         /// <param name="id">ID заказа</param>
         /// <returns>Заказ, при условии что он существует</returns>
-        public static Feedback GetFeedback(DatabaseContext db, int id)
+        public static Feedback? GetFeedback(DatabaseContext db, int id)
         {
             var feedback = db.Feedbacks.FirstOrDefault(u => u.Id == id);
 
@@ -94,7 +94,7 @@ namespace BucketWithBolts.Controller.Tools
         /// <param name="db">Ссылка на бд</param>
         /// <param name="id">ID изображения</param>
         /// <returns>Изображение, при условии что он существует</returns>
-        public static Image GetImage(DatabaseContext db, int id)
+        public static Image? GetImage(DatabaseContext db, int id)
         {
             var image = db.Images.FirstOrDefault(u => u.Id == id);
 

@@ -32,17 +32,18 @@ namespace BucketWithBolts.Controller.Routers
 
             if (newItem == null || newItem.Image_src == null || newItem.Image_src == "")
             {
-                InfoMessager.CreateErrorMessage("Ссылка на картинку отсутствует", $"{this.GetType().Name}.Post");
+                InfoMessager.CreateErrorMessage("Ссылка на изображение отсутствует", $"{this.GetType().Name}.Post");
                 return false;
             }
 
             _db.Images.Add(newItem);
             _db.SaveChanges();
 
+            InfoMessager.CreateSuccessMessage("Добавление в базу данных произошло успешно", $"{this.GetType().Name}.Post");
             return true;
         }
 
-        public Image GetToId(int itemId)
+        public Image? GetToId(int itemId)
         {
             if (_db == null)
             {
@@ -54,7 +55,7 @@ namespace BucketWithBolts.Controller.Routers
 
             if (image == null)
             {
-                InfoMessager.CreateErrorMessage("404 Данные не найдены", $"{this.GetType().Name}.GetToId");
+                InfoMessager.CreateErrorMessage("Данные по этому Id не найдены", $"{this.GetType().Name}.GetToId");
                 return null;
             }
 
@@ -62,7 +63,7 @@ namespace BucketWithBolts.Controller.Routers
             return image;
         }
 
-        public List<Image> GetAll()
+        public List<Image>? GetAll()
         {
             if (_db == null)
             {
@@ -94,7 +95,7 @@ namespace BucketWithBolts.Controller.Routers
 
             if (image == null)
             {
-                InfoMessager.CreateErrorMessage("Ресурсы не найдены", $"{this.GetType().Name}.Delete");
+                InfoMessager.CreateErrorMessage("Данные по этому Id не найдены", $"{this.GetType().Name}.Delete");
                 return false;
             }
 

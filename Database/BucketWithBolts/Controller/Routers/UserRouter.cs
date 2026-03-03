@@ -45,7 +45,7 @@ namespace BucketWithBolts.Controller.Routers
             }
             if (newItem.Balance < 0)
             {
-                InfoMessager.CreateErrorMessage("Деняг нема :(", $"{this.GetType().Name}.Post");
+                InfoMessager.CreateErrorMessage("Баланс не может быть отрицательным", $"{this.GetType().Name}.Post");
                 return false;
             }
 
@@ -67,7 +67,7 @@ namespace BucketWithBolts.Controller.Routers
             return true;
         }
 
-        public User GetToId(int itemId)
+        public User? GetToId(int itemId)
         {
             if (_db == null)
             {
@@ -79,7 +79,7 @@ namespace BucketWithBolts.Controller.Routers
 
             if (user == null)
             {
-                InfoMessager.CreateErrorMessage("Пользователь не найден", $"{this.GetType().Name}.GetToId");
+                InfoMessager.CreateErrorMessage("Данные по этому Id не найдены", $"{this.GetType().Name}.GetToId");
                 return null;
             }
 
@@ -87,7 +87,7 @@ namespace BucketWithBolts.Controller.Routers
             return user;
         }
 
-        public List<User> GetAll()
+        public List<User>? GetAll()
         {
             if (_db == null)
             {
@@ -99,7 +99,7 @@ namespace BucketWithBolts.Controller.Routers
 
             if (users == null)
             {
-                InfoMessager.CreateErrorMessage("Пользователи не найдены", $"{this.GetType().Name}.GetAll");
+                InfoMessager.CreateErrorMessage("Данные не найдены", $"{this.GetType().Name}.GetAll");
                 return null;
             }
 
@@ -119,7 +119,7 @@ namespace BucketWithBolts.Controller.Routers
 
             if (user == null)
             {
-                InfoMessager.CreateErrorMessage("Ничего не найдено", $"{this.GetType().Name}.Delete");
+                InfoMessager.CreateErrorMessage("Данные по этому Id не найдены", $"{this.GetType().Name}.Delete");
                 return false;
             }
 
