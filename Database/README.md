@@ -52,17 +52,19 @@ BucketWithBolts - консольный проект, который создаё
     4. RouterHUB.cs - HUB для роутеров.
 - Migrations - миграция для бд.
 - Models - модели таблиц:
-    1. Admin.cs - модель таблицы Admins.
-    2. Condition.cs - модель таблицы Conditions.
-    3. Correspondence.cs - модель таблицы Correspondences.
-    4. Feedback.cs - модель таблицы Feedbacks.
-    5. Image.cs - модель таблицы Images.
-    6. Order.cs - модель таблицы Orders.
-    7. OrderStatus.cs - модель таблицы OrderStatus.
-    8. Resource_Image.cs - модель таблицы Resource_Images.
-    9. Resource.cs - модель таблицы Resources.
-    10. ResourceStatus.cs - модель таблицы RecourceStatus.
-    11. User.cs - модель таблицы Users.
+    1. Constructors - псевдо-конструкторы всех моделей:
+        -  ModelsConstructors.cs - псевдо-конструкторы.
+    2. Admin.cs - модель таблицы Admins.
+    3. Condition.cs - модель таблицы Conditions.
+    4. Correspondence.cs - модель таблицы Correspondences.
+    5. Feedback.cs - модель таблицы Feedbacks.
+    6. Image.cs - модель таблицы Images.
+    7. Order.cs - модель таблицы Orders.
+    8. OrderStatus.cs - модель таблицы OrderStatus.
+    9. Resource_Image.cs - модель таблицы Resource_Images.
+    10. Resource.cs - модель таблицы Resources.
+    11. ResourceStatus.cs - модель таблицы RecourceStatus.
+    12. User.cs - модель таблицы Users.
 - Services - вспомогательные сервисы:
     - InfoMessager.cs - сервис, посылающий сообщения в консоль.
 
