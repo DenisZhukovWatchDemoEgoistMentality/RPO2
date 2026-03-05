@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BucketWithBolts.Migrations.MsSql
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20260302080241_InitialMsSql")]
+    [Migration("20260305074722_InitialMsSql")]
     partial class InitialMsSql
     {
         /// <inheritdoc />
@@ -230,11 +230,6 @@ namespace BucketWithBolts.Migrations.MsSql
                     b.Property<string>("Description")
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
-
-                    b.Property<string>("Image")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Name")
                         .IsRequired()
