@@ -1,0 +1,17 @@
+@font-face {  
+    font-family: 'Intro';  
+    src: url('../../../assets/fonts/Intro.ttf');  
+    font-weight: bold;  
+    font-style: normal;  
+}  
+#Obyawlenia{
+    font-family: 'Intro';  
+    color: #8287B0;
+    background-color: #F2F4F7;
+    width: auto;
+    font-size: 16px;
+    height: 50px;
+    border-radius: 5px;
+    border-style: none;
+    padding: 16px 19px;
+}
